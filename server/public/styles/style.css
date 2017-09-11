@@ -1,80 +1,78 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  font-size: 14px;
+body{
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+.blue{
+background-color: #0B5292;
+height: 200px;
+color: white
 }
 
-.instructions .container h1 {
-  font-size: 32px;
-  font-weight: 600;
+.green{
+background-color: #1A6443;
+height: 200px;
+}
+.yellow{
+background-color: #FCF005;
+height: 200px;
+}
+.red{
+background-color: #B5102D;
+height: 200px;
 }
 
-.instructions {
-  background-color: #333333;
-  color: #DDDDDD;
-  padding: 15px;
+#pinBox{
+    margin-top: 80px;
+    margin-left: 200px;
+    background-color:black;
+    opacity: .7;
+    height: 500px;
+    width: 500px;
+    z-index: 10;
+}
+#pinBox a{
+    color:white
+}
+.pin{
+height: 80px;
+width: 80px;
+margin: 0 5px 0 5px;
+z-index: 11;
 }
 
-#entryForm {
-  margin-top: 14px;
+.colorName{
+    font-size: 120px;
+        color: black
 }
 
-#container {
-  margin-top: 10px;
+h2{
+    margin: auto;
+    text-align: center;
 }
 
-.container p{
-  margin-top : 14px;
+.instructions{
+    font-size: 36px;
+    margin: auto;
+    text-align: center;
 }
 
-.message {
-  padding: 10px 0;
+.emotions{
+    background:whitesmoke;
+    color:black;
+    height: 150px;
+    width: 150px;
+    margin: 2px 2px 2px 2px;
+    font-size: 40px
 }
 
-.message p {
-  margin-left: 10px;
-}
-
-.message:nth-child(odd) {
-   background-color: #eeeeee;
-}
-
-.message:nth-child(even) {
-  background-color: #f8f8f8;
-}
-
-.btn-danger{
-  margin-left: 10px;
-}
-
-.navbar {
-  background-color: #333333;
-  width: 100%;
-  border-radius: 0px;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  text-decoration: underline;
-  color: #eee;
+.strategies{
+    position: relative;
+    text-align: center;
+    background:whitesmoke;
+    color:black;
+    height: 150px;
+    width: 24em;
+    margin: 2px 2px 2px 2px;
+    font-size: 40px
 }
