@@ -1,0 +1,78 @@
+body{
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+#blue{
+background-color: #0B5292;
+height: 200px;
+color: white
+}
+
+#green{
+background-color: #1A6443;
+height: 200px;
+}
+#yellow{
+background-color: #FCF005;
+height: 200px;
+}
+#red{
+background-color: #B5102D;
+height: 200px;
+}
+
+#pinBox{
+    margin-top: 80px;
+    margin-left: 200px;
+    background-color:black;
+    opacity: .7;
+    height: 500px;
+    width: 500px;
+    z-index: 10;
+}
+#pinBox a{
+    color:white
+}
+.pin{
+height: 80px;
+width: 80px;
+margin: 0 5px 0 5px;
+z-index: 11;
+}
+
+.colorName{
+    font-size: 120px;
+        color: black
+}
+
+h2{
+    margin: auto;
+    text-align: center;
+}
+
+.instructions{
+    font-size: 36px;
+    margin: auto;
+    text-align: center;
+}
+
+.emotions{
+    background:whitesmoke;
+    color:black;
+    height: 150px;
+    width: 150px;
+    margin: 2px 2px 2px 2px;
+    font-size: 40px
+}
+
+.strategies{
+    position: relative;
+    text-align: center;
+    background:whitesmoke;
+    color:black;
+    height: 150px;
+    width: 24em;
+    margin: 2px 2px 2px 2px;
+    font-size: 40px
+}
