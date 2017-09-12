@@ -5,10 +5,11 @@
     <div id='pinBox'>
         <p><label> PIN </label></p>
 
-        <input class="pin" type="text"></input>
-        <input class="pin" type="text"></input>
-        <input class="pin" type="text"></input>
-        <input class="pin" type="text"></input>
+        <input class="pin" type="text" ng-model="lc.pin.a"></input>
+        <input class="pin" type="text" ng-model="lc.pin.b"></input>
+        <input class="pin" type="text" ng-model="lc.pin.c"></input>
+        <input class="pin" type="text" ng-model="lc.pin.d"></input>
+        <button ng-click="lc.check(lc.pin.a,lc.pin.b,lc.pin.c,lc.pin.d)"> submit </button>
         <p> <button href="!#/client">client login</button></p>
                 </div>
     </div>

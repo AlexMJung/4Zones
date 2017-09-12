@@ -9,7 +9,7 @@ self.add = function (z) {
     self.newData.zone = z
     
 
-    console.log('clicked to log blue zone', self.newData);
+    console.log('clicked to log zone', self.newData);
     zoneService.add(self.newData);
 };
 }])//end of app.controller

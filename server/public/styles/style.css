@@ -30,6 +30,7 @@ height: 200px;
     height: 500px;
     width: 500px;
     z-index: 10;
+    border-radius: 10px;
 }
 #pinBox a{
     color:white
