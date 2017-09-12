@@ -4,6 +4,8 @@ app.config(['$routeProvider', function($routeProvider){
     $routeProvider.when('/',{
         templateUrl:'./views/login.html'
     }).when('/zones',{
-        templateUrl: './views/zones.html'
+        templateUrl: './views/zone.html',
+        controller: 'zoneController',
+        controllerAs: 'zc'
     })
 }])
