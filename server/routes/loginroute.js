@@ -18,7 +18,7 @@ router.get('/:pin', function (req, res) {
                         console.log('Error making database query', errorMakingQuery);
                         res.sendStatus(500);
                     } else {
-                        console.log('results sent');
+                        console.log('results sent', result.rows);
                         res.send(result.rows);
                     }//end of nested else
                 });//end of client.query

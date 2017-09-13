@@ -1,13 +1,22 @@
-app.controller('loginController', ['loginService', function (loginService, ) {
-    var self = this;
+app.controller('loginController', ['loginService', '$location', function (loginService, $location) {
     console.log('login.controller loaded');
-    
-    
-    self.pinCheck = {}
+    var self = this;
 
-    self.check = function (a,b,c,d) {
-        self.pinCheck = a+b+c+d;
-         console.log('clicked to login', self.pinCheck);
+    self.pinCheck = {};
+
+    self.User = loginService.User
+
+    self.check = function (a, b, c, d) {
+        self.pinCheck = a + b + c + d;
+        console.log('clicked to login', self.pinCheck);
         loginService.check(self.pinCheck);
-    };
+
+
+        };//end of self.check
+
+
+
+
+
+    
 }])//end of app.controller

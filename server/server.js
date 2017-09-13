@@ -5,14 +5,13 @@ var port = process.env.PORT || 8000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 //routing paths
-var zone = require('./routes/zoneroute')
+var log = require('./routes/logroute')
 var login = require('./routes/loginroute')
-
 
 app.use(express.static('./server/public'));
 
 
-app.use('/zone', zone);
+app.use('/logger', log);
 app.use('/login', login);
 
 

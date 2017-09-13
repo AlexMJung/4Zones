@@ -1,7 +1,6 @@
-<div id="background">
-<div class='blue' ng-app="myApp">
-    <h1>This is the login for 4Zones</h1>
-
+<div id="background" class={{lc.User.LoggedIn}}>
+<div class='blue'>
+ {{lc.User.LoggedIn}}
     <div id='pinBox'>
         <p><label> PIN </label></p>
 
@@ -10,7 +9,7 @@
         <input class="pin" type="text" ng-model="lc.pin.c"></input>
         <input class="pin" type="text" ng-model="lc.pin.d"></input>
         <button ng-click="lc.check(lc.pin.a,lc.pin.b,lc.pin.c,lc.pin.d)"> submit </button>
-        <p> <button href="!#/client">client login</button></p>
+        <p> <button href="!#/client">Client Login</button></p>
                 </div>
     </div>
     <div class='green'>
@@ -19,3 +18,6 @@
     </div>
     <div class='red'>
     </div>
+</div><!--login end-->
+
+
