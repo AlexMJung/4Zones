@@ -11,6 +11,12 @@ self.add = function (z) {
     var path = $location.path('/emotions');
 };
 
+self.User = loginService.User
+
+self.out = function () {
+    loginService.out();
+}
+
 // self.show = "ng-hide";
 
 // if(loginController.User.LoggedIn="ng-hide"){

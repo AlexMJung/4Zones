@@ -10,9 +10,11 @@ app.controller('loginController', ['loginService', '$location', function (loginS
         self.pinCheck = a + b + c + d;
         console.log('clicked to login', self.pinCheck);
         loginService.check(self.pinCheck);
-
-
         };//end of self.check
+
+    self.clientLogin = function (){
+        var path = $location.path('/clientLogin');
+    }
 
 
 

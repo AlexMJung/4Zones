@@ -2,6 +2,7 @@ body{
     background-color: #000000;
     margin: 0;
     padding: 0;
+    color: white;
 }
 .blue{
 background-color: #0B5292;
@@ -30,16 +31,29 @@ height: 200px;
     height: 500px;
     width: 500px;
     z-index: 10;
-    border-radius: 10px;
+    border-radius: 10px; 
+    font-size: 30px;  
 }
+
 #pinBox a{
     color:white
 }
+
+#pin_label{
+    text-align: center;
+font-size: 60px
+}
+
 .pin{
 height: 80px;
 width: 80px;
-margin: 0 5px 0 5px;
+margin: 0 10px 0 10px;
 z-index: 11;
+font-size: 60px
+}
+
+#client_login_button{
+     center;
 }
 
 .colorName{

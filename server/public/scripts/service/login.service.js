@@ -49,12 +49,24 @@ app.service('loginService', ['$http', '$location', function ($http, $location) {
        //     console.log('service post will add ', self.User);
 
             console.log('service post response: ', response);
+            var path = $location.path('/strategies');  
         });
     };//end of seld.addEmotion
 
     self.back = function(){
         self.User.Zone = {};
         var path = $location.path('/zones');
+    }
+
+    self.out = function () {
+        self.User = {
+            Name: {},
+            PIN: {},
+            Zone: {},
+            Emotion: {},
+            LoggedIn: false
+        };
+        var path = $location.path('/');
     }
 
 }]);//end of app.service
