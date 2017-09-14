@@ -1,24 +1,47 @@
-app.controller('loginController', ['loginService', '$location', function (loginService, $location) {
-    console.log('login.controller loaded');
-    var self = this;
+myApp.controller('LoginController', function ($http, $location, UserService) {
+    console.log('LoginController created');
+    var vm = this;
+    vm.user = {
+        username: '',
+        password: ''
+    };
+    vm.message = '';
 
-    self.pinCheck = {};
+    vm.login = function () {
+        console.log('LoginController -- login');
+        if (vm.user.username === '' || vm.user.password === '') {
+            vm.message = "Enter your username and password!";
+        } else {
+            console.log('LoginController -- login -- sending to server...', vm.user);
+            $http.post('/', vm.user).then(function (response) {
+                if (response.data.username) {
+                    console.log('LoginController -- login -- success: ', response.data);
+                    // location works with SPA (ng-route)
+                    $location.path('/user'); // http://localhost:5000/#/user
+                } else {
+                    console.log('LoginController -- login -- failure: ', response);
+                    vm.message = "Wrong!!";
+                }
+            }).catch(function (response) {
+                console.log('LoginController -- registerUser -- failure: ', response);
+                vm.message = "Wrong!!";
+            });
+        }
+    };
 
-    self.User = loginService.User
-
-    self.check = function (a, b, c, d) {
-        self.pinCheck = a + b + c + d;
-        console.log('clicked to login', self.pinCheck);
-        loginService.check(self.pinCheck);
-        };//end of self.check
-
-    self.clientLogin = function (){
-        var path = $location.path('/clientLogin');
+    vm.registerUser = function () {
+        console.log('LoginController -- registerUser');
+        if (vm.user.username === '' || vm.user.password === '') {
+            vm.message = "Choose a username and password!";
+        } else {
+            console.log('LoginController -- registerUser -- sending to server...', vm.user);
+            $http.post('/register', vm.user).then(function (response) {
+                console.log('LoginController -- registerUser -- success');
+                $location.path('/home');
+            }).catch(function (response) {
+                console.log('LoginController -- registerUser -- error');
+                vm.message = "Please try again."
+            });
+        }
     }
-
-
-
-
-
-    
-}])//end of app.controller
+});
