@@ -1,14 +1,26 @@
 <div class="container">
     <h1 class="lead">Register User</h1>
-    <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
-        <form ng-submit="lc.registerUser()">
+    <h1 class="lead alert alert-danger" role="alert" ng-if="Lc.message != ''">{{lc.message}}</h2>
+        <form ng-submit="Lc.registerUser()">
             <div>
                 <label for="username">Username:</label>
-                <input type="text" ng-model="lc.user.username" />
+                <input type="text" ng-model="Lc.user.username" />
             </div>
             <div>
                 <label for="password">Password:</label>
-                <input type="password" ng-model="lc.user.password" />
+                <input type="password" ng-model="Lc.user.password" />
+            </div>
+            <div>
+                <label for="password">First Name:</label>
+                <input type="text" ng-model="Lc.user.first_name" />
+            </div>
+            <div>
+                <label for="password">Last Name:</label>
+                <input type="text" ng-model="Lc.user.last_name" />
+            </div>
+            <div>
+                <label for="password">Email:</label>
+                <input type="text" ng-model="Lc.user.email" />
             </div>
             <input class="btn btn-default" type="submit" name="submit" value="Register" />
             <a href="#home">Cancel</a>

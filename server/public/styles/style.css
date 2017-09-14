@@ -91,3 +91,17 @@ h2{
     margin: 2px 2px 2px 2px;
     font-size: 40px
 }
+
+
+#welcomebox{
+    background-color: #24678d;
+    color: #ffffff;
+    height: 400px;
+    width: 400px
+}
+#loginbox{
+    background-color: whitesmoke;
+    color:black;
+     height: 300px;
+    width: 380px
+}

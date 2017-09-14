@@ -18,16 +18,13 @@ app.config(['$routeProvider', function ($routeProvider) {
         controller: 'strategyController',
         controllerAs: 'sc'
     }).when('/clientLogin', {
-        templateUrl: './views/client/clientlogin.html'
-        //add controler
-    }).when('/home', {
-        templateUrl: '/views/templates/home.html',
-        controller: 'LoginController as lc',
+        templateUrl: '/views/client/clientlogin.html',
+        controller: 'LoginController as Lc',
     }).when('/register', {
-            templateUrl: '/views/templates/register.html',
-            controller: 'LoginController as lc'
+            templateUrl: '/views/client/clientregister.html',
+            controller: 'LoginController as Lc'
         }).when('/user', {
-            templateUrl: '/views/templates/user.html',
+            templateUrl: '/views/client/clientuser.html',
             controller: 'UserController as uc',
             resolve: {
                 getuser: function (UserService) {
@@ -35,7 +32,7 @@ app.config(['$routeProvider', function ($routeProvider) {
                 }
             }
         }).when('/info', {
-            templateUrl: '/views/templates/info.html',
+            templateUrl: '/views/client/clientinfo.html',
             controller: 'InfoController',
             resolve: {
                 getuser: function (UserService) {
@@ -44,6 +41,6 @@ app.config(['$routeProvider', function ($routeProvider) {
             }
         })
         .otherwise({
-            redirectTo: 'http://www.zonesofregulation.com/index.html'
+            redirectTo: '/'
         });
 }])

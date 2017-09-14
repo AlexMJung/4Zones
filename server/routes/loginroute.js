@@ -11,7 +11,7 @@ router.get('/:pin', function (req, res) {
             res.sendStatus(500);
         } else {
             client.query(
-                "SELECT * FROM users WHERE pin=$1", [pin]
+                "SELECT * FROM participant WHERE pin=$1", [pin]
                 , function (errorMakingQuery, result) {
                     done();
                     if (errorMakingQuery) {

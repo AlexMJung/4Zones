@@ -31,7 +31,7 @@ app.service('loginService', ['$http', '$location', function ($http, $location) {
     self.add = function (data) {
        // console.log('self.add hit in service w/ data of', data);
         self.User.Zone = data;
-       // console.log('new object after .add', self.User);
+       console.log('new object after .add', self.User);
 
         //*****add if statement to check for selected level then use http post below */
         // $http.post('/zone', data).then(function (response) {
@@ -46,7 +46,7 @@ app.service('loginService', ['$http', '$location', function ($http, $location) {
         self.User.Emotion = data;
      //   console.log('new object after .add', self.User);
         $http.post('/logger', self.User).then(function (response) {
-       //     console.log('service post will add ', self.User);
+          console.log('service post will add ', self.User);
 
             console.log('service post response: ', response);
             var path = $location.path('/strategies');  
