@@ -29,7 +29,7 @@ height: 200px;
     background-color:black;
     opacity: .7;
     height: 500px;
-    width: 500px;
+    width: 550px;
     z-index: 10;
     border-radius: 10px; 
     font-size: 30px;  
@@ -52,9 +52,9 @@ z-index: 11;
 font-size: 60px
 }
 
-#client_login_button{
-     center;
-}
+/* #client_login_button{
+     
+} */
 
 .colorName{
     font-size: 120px;
@@ -104,4 +104,49 @@ h2{
     color:black;
      height: 300px;
     width: 380px
+}
+
+#landing{
+    background-color: #7313AB;
+    height: 900px;
+    text-align: center;
+    z-index: 1
+}
+#logout{
+    display: flex;
+    float: right;
+}
+
+#landinglogin{
+    position: fixed;
+    background-color: whitesmoke;
+    color: black;
+    height: 700px;
+    width: 1200px;
+    z-index: 4
+
+}
+
+#userBlocks{
+    background-color: black;
+    color: white;
+    height: 80px;
+    width: 280px;
+    z-index: 2;
+    margin: 10px 10px 10px 10px
+}
+
+#landingNewUser{
+        background-color: purple;
+    color: white;
+    height: 80px;
+    width: 280px;
+    z-index: 2;
+    margin: 10px 10px 10px 10px
+}
+#header{
+    background-color: #7313AB;
+    height: 125px;
+    text-align: center;
+    z-index: 1
 }

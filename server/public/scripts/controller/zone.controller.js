@@ -1,28 +1,21 @@
-app.controller('zoneController', ['loginService', "$location", function (loginService, $location){
+app.controller('zoneController', ['loginService', "$location", function (loginService, $location) {
     console.log('zone.controller loaded');
-    var self= this;
+    var self = this;
 
-self.newData = { };
+    self.newData = {};
+    self.User = loginService.User
 
-self.add = function (z) {
-    self.newData = z
-    console.log('clicked to log zone', self.newData);
-    loginService.add(self.newData); 
-    var path = $location.path('/emotions');
-};
+    self.add = function (z) {
+        self.newData = z
+        console.log('clicked to log zone', self.newData);
+        loginService.add(self.newData);
+        var path = $location.path('/emotions');
+    };
 
-self.User = loginService.User
+    self.out = function () {
+        loginService.out();
+    }
 
-self.out = function () {
-    loginService.out();
-}
 
-// self.show = "ng-hide";
-
-// if(loginController.User.LoggedIn="ng-hide"){
-//     self.show = "ng-show"
-// };
-
-// console.log('Zone controller', self.show);
 
 }])//end of app.controller

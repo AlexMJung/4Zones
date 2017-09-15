@@ -24,8 +24,9 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: '/views/client/clientregister.html',
             controller: 'LoginController as Lc'
         }).when('/user', {
-            templateUrl: '/views/client/clientuser.html',
-            controller: 'UserController as uc',
+            templateUrl: '/views/client/client.html',
+            controller: 'UserController',
+            controllerAs: 'uc',
             resolve: {
                 getuser: function (UserService) {
                     return UserService.getuser();
@@ -34,6 +35,7 @@ app.config(['$routeProvider', function ($routeProvider) {
         }).when('/info', {
             templateUrl: '/views/client/clientinfo.html',
             controller: 'InfoController',
+            controllerAs: 'ic',
             resolve: {
                 getuser: function (UserService) {
                     return UserService.getuser();

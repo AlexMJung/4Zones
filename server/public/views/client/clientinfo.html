@@ -1,6 +1,31 @@
-<div ng-include="'views/partials/nav.html'"></div>
 <div class="container">
+    <div id="header">
+        <h1 id="welcome" class="lead">Welcome, {{ic.userService.userObject.userName}}!</h1>
+        <button><a ng-href="/#!/user">home</a></button>
+    </div>
+    <md-input-container class=“md-block”>
+        <label for=“firstname”>First Name:</label>
+        <input type=“text” ng-model=“ic.user.firstname” /> </md-input-container>
+<md-input-container class=“md-block”>
+        <label for=“lastname”>Last Name:</label>
+    <input type=“text” ng-model=“ic.user.lastname” /> </md-input-container>
+    <md-input-container class=“md-block”>
+    <label for=“PIN”>Pin:</label>
+    <input type=“text” ng-model=“ic.user.pin” /> </md-input-container>
+    <md-input-container class=“md-block”>
+    <label for="confirmpin">Confirm PIN:</label>
+    <input type=“text” ng-model=“ic.user.confirmpin” /> </md-input-container>
+    <md-input-container class=“md-block”>
+    <label for=“email”>Responder Email:</label>
+    <input type=“text” ng-model=“ic.user.email” /> </md-input-container>
+    <md-input-container class=“md-block”>]
+    <label for="emotionalawareness">Emotional Awareness</label>
+<input type=“checkbox” ng-model=“ic.user.low” /> </md-input-container>
+
+
+
     <p>
-        In Info
+        this is the page we will use to register a new student and to view the info of current students
+
     </p>
 </div>
