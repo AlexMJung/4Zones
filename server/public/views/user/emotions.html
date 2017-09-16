@@ -1,11 +1,18 @@
-<div md-layout="row" layout-xs="column" id="background" class='red' flex>
+<div class={{ec.User.Zone}} >
     <div class="instructions">
         <p>Please Select an Emotion</p>
+    
+    <div layout="row" layout-margin layout-align="space-around center">
+        <div flex="45" class="emotions" ng-click="ec.add('a')">{{ec.color.a}}</div>
+        <div flex="45" class="emotions" ng-click="ec.add('b')">{{ec.color.b}}</div>
     </div>
-    <div flex class="emotions" ng-click="ec.add('sad')">Sad</div>
-    <div flex class="emotions" ng-click="ec.add('Tired')">Tired</div>
-    <div flex class="emotions" ng-click="ec.add('Bored')">Bored</div>
-    <div flex class="emotions" ng-click="ec.add('Hurt')">Hurt</div>
-    <div flex class="emotions" ng-click="ec.alert()">Alert my responder I need help.</div>
-    <div flex class="emotions" ng-click="ec.back()">None of these fit I need help.</div>
+    <div layout="row" layout-margin layout-align="space-around center">
+        <div flex="45" class="emotions" ng-click="ec.add('c')">{{ec.color.c}}</div>
+        <div flex="45" class="emotions" ng-click="ec.add('d')">{{ec.color.d}}</div>
+    </div>
+    <div layout="row" layout-margin layout-align="space-around center">
+        <div flex="45" class="emotions" ng-click="ec.alert()">Alert my responder I need help.</div>
+        <div flex="45" class="emotions" ng-click="ec.back()">None of these fit, go back.</div>
+    </div>
+    </div>
 </div>

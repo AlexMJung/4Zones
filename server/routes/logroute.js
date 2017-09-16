@@ -3,14 +3,16 @@ var router = express.Router();
 var pool = require('../modules/pool');
 
 router.post('/', function (req, res) {
-    console.log('new property to store: ', req.body);
+    //console.log('new property to store: ', req.body);
     pool.connect(function (errorConnectingToDatabase, client, done) {
         if (errorConnectingToDatabase) {
             console.log('Error connecting to database', errorConnectingToDatabase);
             res.sendStatus(500);
         } else {
             client.query(
-                'INSERT INTO "logs"("pin", "zone", "emotion") VALUES ($1, $2, $3);',[req.body.PIN, req.body.Zone, req.body.Emotion], function (errorMakingQuery, result) {
+                'INSERT INTO "logs"("pin", "zone", "emotion") VALUES ($1, $2, $3);',
+                [req.body.PIN, req.body.Zone, req.body.Emotion], 
+                function (errorMakingQuery, result) {
                 done();
                 if (errorMakingQuery) {
                     console.log('Error making database query', errorMakingQuery);

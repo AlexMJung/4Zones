@@ -16,6 +16,13 @@ app.controller('zoneController', ['loginService', "$location", function (loginSe
         loginService.out();
     }
 
+    self.checkLoggedIn = function () {
+        if (self.User.LoggedIn == false) {
+            $location.path("/home")
+        }
+    }//end of checkLoggedIn
+
+    self.checkLoggedIn();
 
 
 }])//end of app.controller
