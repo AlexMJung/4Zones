@@ -1,25 +1,24 @@
-<div id="anchor" layout="column" layout-align="start stretch">
-    <div class='blue'>
+<div layout="column" layout-align="center stretch">
+    <div flex="25" class='blue'>
     </div>
-    <div class='green'>
+    <div flex="25" class='green'>
+
+<div id='pinBox' layout="row" layout-align="center, center">
+    <form ng-click="lc.check(lc.pin.a,lc.pin.b,lc.pin.c,lc.pin.d)">
+        <p id="pin_label"> {{lc.message}} </p>
+        <div layout="row" layout-margin layout-align="center center">
+            <input flex="5" class="pin" type="password" ng-model="lc.pin.a" maxlength="1"></input> -
+            <input flex="5" class="pin" type="password" ng-model="lc.pin.b" maxlength="1"></input> -
+            <input flex="5" class="pin" type="password" ng-model="lc.pin.c" maxlength="1"></input> -
+            <input flex="5" class="pin" type="password" ng-model="lc.pin.d" maxlength="1"></input>
+        </div>
+    </form>
+</div><!-- end of pinbox -->
     </div>
-    <div class='yellow'>
+    <div flex="25" class='yellow'>
     </div>
-    <div class='red'>
+    <div flex="25" class='red'>
     </div>
 
-<div id='pinBox'>
-    <p id="pin_label"> PIN </p>
-    <div layout="row" layout-margin layout-align "center center">
-        <form ng-click="lc.check(lc.pin.a,lc.pin.b,lc.pin.c,lc.pin.d)">
-           
-            <input class="pin" type="password" ng-model="lc.pin.a" maxlength="1"></input> -
-            <input class="pin" type="password" ng-model="lc.pin.b" maxlength="1"></input> -
-            <input class="pin" type="password" ng-model="lc.pin.c" maxlength="1"></input> -
-            <input class="pin" type="password" ng-model="lc.pin.d" maxlength="1"></input> 
-
-        </form>
-    </div>
-</div>
-<md-button id="clientLoginButton" class="md-primary md-raised" ng-click="lc.clientLogin()">Client Login</md-button>
+    <md-button id="clientLoginButton" class="md-primary md-raised" ng-click="lc.clientLogin()">Client Login</md-button>
 </div>

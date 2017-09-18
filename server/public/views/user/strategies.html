@@ -1,12 +1,18 @@
 
-<div id="background" class="blue">
+<div id="background" class={{sc.User.Zone}}>
     <div class="instructions">
         <p>Please Try these strategies. Click done to close. </p>
     </div>
+    <div layout="row" layout-margin layout-align="space-around center">
     <div class="strategies">Take 5 deep breaths</div>
     <div class="strategies">Look at this puppy</div>
+    </div>
+    <div layout="row" layout-margin layout-align="space-around center">
     <div class="strategies">go to the restroom and wash your face</div>
     <div class="strategies">Alert my responder I need help.</div>
+</div>
+<div layout="row" layout-align="center center">
     <div class="strategies" ng-click="sc.out()">Done</div>
+</div>
 </div>
 
