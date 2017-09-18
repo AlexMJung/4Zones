@@ -71,6 +71,10 @@ h2{
     margin: auto;
     text-align: center;
 }
+h1{
+    margin: auto;
+    text-align: center;
+}
 
 .instructions{
     font-size: 36px;
@@ -102,8 +106,8 @@ h2{
 #welcomebox{
     background-color: #24678d;
     color: #ffffff;
-    height: 400px;
-    width: 400px
+    height: 600px;
+    width: 800px
 }
 #loginbox{
     background-color: whitesmoke;
@@ -158,4 +162,17 @@ h2{
 }
 #clientLoginButton{
     z-index: 12;
+}
+#clientLogin{
+    width: 60%;
+    height: 40%
+}
+#clientRegister{
+    background-color: whitesmoke;
+    color:black;
+     height: 80%;
+    width: 60%
+}
+.mini{
+    font-size: 11px;
 }

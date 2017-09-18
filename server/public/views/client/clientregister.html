@@ -1,29 +1,32 @@
-<div class="container">
-    <h1 class="lead">Register User</h1>
-    <h1 class="lead alert alert-danger" role="alert" ng-if="Lc.message != ''">{{lc.message}}</h2>
-        <form ng-submit="Lc.registerUser()">
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" ng-model="Lc.user.username" />
-            </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" ng-model="Lc.user.password" />
-            </div>
-            <div>
-                <label for="password">First Name:</label>
-                <input type="text" ng-model="Lc.user.first_name" />
-            </div>
-            <div>
-                <label for="password">Last Name:</label>
-                <input type="text" ng-model="Lc.user.last_name" />
-            </div>
-            <div>
-                <label for="password">Email:</label>
-                <input type="text" ng-model="Lc.user.email" />
-            </div>
-            <input class="btn btn-default" type="submit" name="submit" value="Register" />
-            <a href="/#!/clientLogin">Cancel</a>
-        </form>
-
+<div layout="row" class="container" layout-align="center center">
+    <div id="welcomebox" layout="row" layout-align="center start">
+        <md-card id="clientRegister">
+            <md-card-content>
+                <h1>Welcome</h1>
+                <h2>{{Lc.rmessage}}</h2>
+                <label for="username">Username:</label><br>
+                <input type="text" ng-model="Lc.user.username" /><br>
+                <label for="password">Password:</label><br>
+                <input type="password" ng-model="Lc.user.password" /><br>
+                <label for="password">Confirm Password:</label><br>
+                <input type="password" ng-model="Lc.user.confirm_password" /><br>
+                <label for="password">First Name:</label><br>
+                <input type="text" ng-model="Lc.user.first_name" /><br>
+                <label for="password">Last Name:</label><br>
+                <input type="text" ng-model="Lc.user.last_name" /><br>
+                <label for="password">Email:</label><br>
+                <input type="text" ng-model="Lc.user.email" /><br>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="center center">
+                <md-button ng-click="Lc.registerUser(Lc.user)"> Register </md-button>
+                <md-button ng-href="/#!/clientLogin">Cancel</md-button>
+            </md-card-actions>
+            <md-card-footer>
+                <md-card-footer-text>
+                    <p class="mini"> *All fields are required.</p>
+                    <p class= "mini"> *Note we will never sell your personal information. </p>
+                </md-card-footer-text>
+            </md-card-footer>
+        </md-card>
+    </div>
 </div>

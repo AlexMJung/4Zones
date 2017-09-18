@@ -1,22 +1,20 @@
-<div class="container">
-    <div id="welcomebox">
-    <h1 class="lead">Welcome</h1>
-    <h1 class="lead alert alert-danger" role="alert" ng-if="Lc.message != ''">{{lc.message}}</h2>
-       <div id="loginbox">
-        <form ng-submit="Lc.login()">
-            <div>
-                <label for="username">Username:</label><br>
-                <input type="text" ng-model="Lc.user.username" />
-            </div>
-            <div>
-                <label for="password">Password:</label><br>
-                <input type="password" ng-model="Lc.user.password" />
-            </div>
-            <div>
-                <input class="btn btn-default" type="submit" name="submit" value="Log In" />
-                <button> <a ng-href="/#!/register">Register</a></button>
-            </div>
-        </form>
-        </div>
+<div layout="row" class="container" layout-align="center center">
+    <div id="welcomebox" layout="row" layout-align="center start">
+        <!-- <h1 class="lead alert alert-danger" role="alert" ng-if="Lc.message != ''">{{lc.message}}</h2> -->
+            
+                <md-card id="clientLogin">
+                    <md-card-content>
+                        <h1>Hello!</h1>
+                        <h2>{{Lc.message}}</h2>
+                        <label for="username">Username:</label><br>
+                        <input type="text" ng-model="Lc.user.username" /><br>
+                        <label for="password">Password:</label><br>
+                        <input type="password" ng-model="Lc.user.password" /><br>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="center center">
+                        <md-button ng-click="Lc.login(Lc.User)"> Log In </md-button>
+                        <md-button ng-href="/#!/register">Register</md-button>
+                    </md-card-actions>
+                </md-card>
     </div>
 </div>
