@@ -5,7 +5,7 @@ app.controller('loginController', ['loginService', '$location', '$mdDialog', fun
     self.pinCheck = {};;
     self.User = loginService.User;
     self.message = "Please enter your pin."
-    self.auto_submit = setInterval(function () { self.check(self.pin.a, self.pin.b, self.pin.c, self.pin.d); }, 500);
+    //self.auto_submit = setInterval(function () { self.check(self.pin.a, self.pin.b, self.pin.c, self.pin.d); }, 5000);
     
     self.check = function (a, b, c, d) {
         self.pinCheck = a + b + c + d;

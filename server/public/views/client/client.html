@@ -1,9 +1,16 @@
 <div class="container">
     <div id="landing" flex>
-        <h1 id="welcome" class="lead">Welcome, {{uc.userService.userObject.userName}}!</h1>
+        <h1 id="welcome" class="lead">Welcome, {{uc.userService.userObject.first_name 
+            + uc.userService.userObject.last_name}}!</h1>
         <button id="logout" class="btn btn-default" ng-click="uc.UserService.logout()">Log Out</button>
         <div id="landinglogin">
             <h1>User's current states:</h1>
+            <table>
+                <thead>
+                    
+                    
+                </thead>
+            </table>
             <div id="userBlocks" ng-click=uc.newUser()>student 1</div>
         
         <div id="landingNewUser" ng-click=uc.newUser()> Add A User</div>
