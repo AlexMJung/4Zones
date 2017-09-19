@@ -1,20 +1,25 @@
-app.factory('UserService', function ($http, $location) {
+app.service('UserService', function ($http, $location) {
     console.log('UserService Loaded');
+    var self = this;
 
-    var userObject = {};
+    self.userObject = {
+        userName : {},
+        name : {},
+        lname : {},
+        email : {}
+    };
 
-    return {
-        userObject: userObject,
 
-        getuser: function () {
+       self.getuser= function () {
             console.log('UserService -- getuser');
             $http.get('/user').then(function (response) {
                 if (response.data.username) {
                     // user has a curret session on the server
-                    userObject.userName = response.data.username;
-                    // userObject.name = response.data.first_name + response.data.last_name;
-                    userObject.email = response.data.email;
-                    console.log('UserService -- getuser -- User Data: ', userObject.userName);
+                    self.userObject.userName = response.data.username;
+                    self.userObject.name = response.data.first_name;
+                    self.userObject.lname = response.data.last_name;
+                    self.userObject.email = response.data.email;
+                    console.log('UserService -- getuser -- User Data: ', self.userObject);
                 } else {
                     console.log('UserService -- getuser -- failure');
                     // user has no session, bounce them back to the login page
@@ -26,12 +31,12 @@ app.factory('UserService', function ($http, $location) {
             });
         },
 
-        logout: function () {
+
+        self.logout= function () {
             console.log('UserService -- logout');
             $http.get('/user/logout').then(function (response) {
                 console.log('UserService -- logout -- logged out');
                 $location.path("/#!//clientLogin");
             });
         }
-    };
 });
