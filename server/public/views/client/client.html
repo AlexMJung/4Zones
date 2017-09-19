@@ -1,12 +1,11 @@
 <div class="container">
     <div id="landing" flex>
-        <h1 id="welcome" class="lead">Welcome, {{uc}}!</h1> 
-        <button id="logout" class="btn btn-default" ng-click="uc.UserService.logout()">Log Out</button>
+        <h1 id="welcome" class="lead">Welcome, {{uc.userService.userObject.name}} {{uc.userService.userObject.lname}}!</h1> 
+        <button id="logout" class="btn btn-default" ng-click="uc.logout()">Log Out</button>
         <div id="landinglogin">
             <h1>User's current states:</h1>
-
             
-            <div ng-repeat="users in uc.Users.list" id="userBlocks" ng-click=uc.newUser() >{{users.first_name}} {{users.last_name}}</div>
+            <div ng-repeat="users in uc.Users.list"  class={{users.zone}} ng-click=uc.newUser() >{{users.first_name}} {{users.last_name}} {{users.created_at}}</div>
         
         <div id="landingNewUser" ng-click=uc.newUser()> Add A User</div>
         </div>

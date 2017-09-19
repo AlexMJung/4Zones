@@ -2,7 +2,9 @@ app.controller('UserController', ['UserService', '$location', 'serviceService', 
     console.log('UserController created');
     var vm = this;
     vm.userService = UserService;
+    
     vm.userObject = UserService.userObject;
+
     vm.Users = serviceService.Users;
 
     vm.newUser = function(){

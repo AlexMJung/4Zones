@@ -8,6 +8,8 @@ app.service('serviceService', ['$http', '$location', function ($http, $location)
         console.log("self.getUsers hit in service");
         $http.get('/getUsers').then(function (response) {
             self.Users.list= response.data
+            console.log("response from server is", response);
+            
 
         })}
 

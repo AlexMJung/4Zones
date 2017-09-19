@@ -3,21 +3,19 @@ app.service('UserService', function ($http, $location) {
     var self = this;
 
     self.userObject = {
-        userName : {},
-        name : {},
-        lname : {},
-        email : {}
     };
 
 
        self.getuser= function () {
             console.log('UserService -- getuser');
             $http.get('/user').then(function (response) {
+                console.log(response);
+                
                 if (response.data.username) {
                     // user has a curret session on the server
                     self.userObject.userName = response.data.username;
-                    self.userObject.name = response.data.first_name;
-                    self.userObject.lname = response.data.last_name;
+                    self.userObject.name = response.data.name;
+                    self.userObject.lname = response.data.lname;
                     self.userObject.email = response.data.email;
                     console.log('UserService -- getuser -- User Data: ', self.userObject);
                 } else {
