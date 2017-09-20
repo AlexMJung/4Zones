@@ -191,11 +191,6 @@ h1{
     
 }
 
-.filler{
-    height: 33%;
-    min-height: 200px;
-}
-
 .title{
     background-color: #000000;
 }
@@ -206,26 +201,70 @@ h1{
 
 #blue{
 background-color: #0B5292;
-height: 25%;
-min-height: 170px;
+height: 100vh;
 color: white;
 z-index: -5;
 }
 
 #green{
 background-color: #1A6443;
+height: 100vh;
+z-index: -5;
+}
+#yellow{
+background-color: #FCF005;
+color:black;
+height: 100vh;
+z-index: -5;
+}
+#red{
+background-color: #B5102D;
+height: 100vh;
+z-index: -5;
+}
+
+.background{
+    background-color: #000000;
+}
+.background_base{
+    background-color: rgb(141, 138, 138);
+    margin: auto;
+    height: 75%;
+    width: 80%;   
+}
+
+
+.checkboxdemoBasicUsage div.flex-xs {
+  min-height: 40px; }
+
+.checkboxdemoBasicUsage .checkboxDemo1 div {
+  clear: both; }
+
+.checkboxdemoBasicUsage legend {
+  color: #3F51B5; }
+
+  #blueZone{
+background-color: #0B5292;
+height: 25%;
+min-height: 170px;
+color: white;
+z-index: -5;
+}
+
+#greenZone{
+background-color: #1A6443;
 height: 25%;
 min-height: 170px;
 z-index: -5;
 }
-#yellow{
+#yellowZone{
 background-color: #FCF005;
 color:black;
 height: 25%;
 min-height: 170px;
 z-index: -5;
 }
-#red{
+#redZone{
 background-color: #B5102D;
 height: 25%;
 min-height: 170px;

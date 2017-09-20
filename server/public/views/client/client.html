@@ -4,8 +4,7 @@
         <button id="logout" class="btn btn-default" ng-click="uc.logout()">Log Out</button>
         <div id="landinglogin">
             <h1>User's current states:</h1>
-            
-            <div ng-repeat="users in uc.Users.list"  class={{users.zone}} ng-click=uc.newUser() >{{users.first_name}} {{users.last_name}} {{users.created_at}}</div>
+            <div ng-repeat="users in uc.Users.list"  class={{users.zone}} ng-click=uc.userHistory({{user.pin}}) >{{users.first_name}} {{users.last_name}} {{users.created_at}}</div>
         
         <div id="landingNewUser" ng-click=uc.newUser()> Add A User</div>
         </div>

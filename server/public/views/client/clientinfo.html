@@ -1,31 +1,59 @@
-<div class="container">
+<div class="background" layout="column">
     <div id="header">
-        <h1 id="welcome" class="lead">Welcome, {{ic.userService.userObject.userName}}!</h1>
-        <button><a ng-href="/#!/user">home</a></button>
+        <h1 id="welcome" class="lead">Welcome, {{ic.userObject.name}}!</h1>
+        <button ng-href="#!/user">User Panel</button>
     </div>
-    <md-input-container class=“md-block”>
-        <label for=“firstname”>First Name:</label>
-        <input type=“text” ng-model=“ic.user.firstname” /> </md-input-container>
-<md-input-container class=“md-block”>
-        <label for=“lastname”>Last Name:</label>
-    <input type=“text” ng-model=“ic.user.lastname” /> </md-input-container>
-    <md-input-container class=“md-block”>
-    <label for=“PIN”>Pin:</label>
-    <input type=“text” ng-model=“ic.user.pin” /> </md-input-container>
-    <md-input-container class=“md-block”>
-    <label for="confirmpin">Confirm PIN:</label>
-    <input type=“text” ng-model=“ic.user.confirmpin” /> </md-input-container>
-    <md-input-container class=“md-block”>
-    <label for=“email”>Responder Email:</label>
-    <input type=“text” ng-model=“ic.user.email” /> </md-input-container>
-    <md-input-container class=“md-block”>]
-    <label for="emotionalawareness">Emotional Awareness</label>
-<input type=“checkbox” ng-model=“ic.user.low” /> </md-input-container>
+    <div class="background_base">
+        <div class="section" layout="row" layout-align="space-around center">
+            <div flex="15">
+                <label for=“firstname”>First Name:</label><br>
+                <input type=“text” ng-model="ic.newUser.first_name"></input>
+            </div>
+            <div flex="15">
+                <label for=“lastname”>Last Name:</label><br>
+                <input type=“text” ng-model="ic.newUser.last_name"/>
+            </div>
+            <div flex="15">
+                <label for=“PIN”>Pin:</label><br>
+                <input type=“text” ng-model="ic.newUser.pin" maxlength="4"/>
+            </div>
+            <div flex="15">
+                <label for="confirmpin">Confirm PIN:</label><br>
+                <input type=“text” ng-model="ic.newUser.confirmpin" maxlength="4"/>
+            </div>
+            <div flex="15">
+                <label for=“email”>Responder Email:</label><br>
+                <input type=“text” ng-model="ic.newUser.rEmail"/>
+            </div>
+        </div>
 
-
-
-    <p>
-        this is the page we will use to register a new student and to view the info of current students
-
-    </p>
+        <div layout-wrap layout="row" layout-align="center center" layout-padding>
+            <div flex="20" flex-offset="5">
+            <label for="emotionalawareness"> Emotional Awareness:</label><br>
+            </div>
+            <div flex="10">
+                <md-checkbox md-no-ink aria-label="Checkbox low" ng-model="ic.data.low" class="md-primary" ng-change="ic.checkboxSelected('low')">
+                    Low
+                </md-checkbox>
+            </div>
+            <div flex="10">
+                <md-checkbox md-no-ink aria-label="Checkbox Base" ng-model="ic.data.base" class="md-primary" ng-change="ic.checkboxSelected('base')">
+                    Base
+                </md-checkbox>
+            </div>
+            <div flex="10">
+                <md-checkbox md-no-ink aria-label="Checkbox advanced" ng-model="ic.data.advanced" class="md-primary" ng-change="ic.checkboxSelected('advanced')">
+                    Advanced
+                </md-checkbox>
+            </div>
+            <div flex="45">
+                <md-button class="md-raised md-primary" ng-click="ic.addUser()">Add new user</md-button>
+            </div>
+        </div>
+        <hr>
+        <h1> User History </h1>
+<br>
+<br>
+        <h2>{{ic.message}}</h2>
+    </div>
 </div>

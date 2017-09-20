@@ -8,7 +8,7 @@ app.controller('UserController', ['UserService', '$location', 'serviceService', 
     vm.Users = serviceService.Users;
 
     vm.newUser = function(){
-        console.log('student button clicked')
+        console.log('add student button clicked')
         var path = $location.path('/info');
     }
 

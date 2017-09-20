@@ -1,23 +1,23 @@
 <div class='title'>
     <h2>Hello {{ec.User.Name}} </h2>
-<div id={{ec.User.Zone}} layout="column" >
-    <div class="background">
-    <div class="instructions">
-        <p>Please Select an Emotion</p>
-    </div>
-    <div layout="row" layout-margin layout-align="space-around center">
-        <div flex="45" class="emotions" ng-click="ec.add('a')">{{ec.color.a}}</div>
-        <div flex="45" class="emotions" ng-click="ec.add('b')">{{ec.color.b}}</div>
-    </div>
-    <div layout="row" layout-margin layout-align="space-around center">
-        <div flex="45" class="emotions" ng-click="ec.add('c')">{{ec.color.c}}</div>
-        <div flex="45" class="emotions" ng-click="ec.add('d')">{{ec.color.d}}</div>
-    </div>
-    <div layout="row" layout-margin layout-align="space-around center">
-        <div flex="45" class="emotions" ng-click="ec.alert()">Alert my responder I need help.</div>
-        <div flex="45" class="emotions" ng-click="ec.back()">None of these fit, go back.</div>
-    </div>
-    
-    </div>
 </div>
+<div class="background">
+    <div id={{ec.User.Zone}} layout="column" >
+        <div class="instructions">
+            <p>Please Select an Emotion</p>
+        </div>
+        <div layout="row" layout-margin layout-align="space-around center">
+            <div flex="45" class="emotions" ng-click="ec.add('a')">{{ec.color.a}}</div>
+            <div flex="45" class="emotions" ng-click="ec.add('b')">{{ec.color.b}}</div>
+        </div>
+        <div layout="row" layout-margin layout-align="space-around center">
+            <div flex="45" class="emotions" ng-click="ec.add('c')">{{ec.color.c}}</div>
+            <div flex="45" class="emotions" ng-click="ec.add('d')">{{ec.color.d}}</div>
+        </div>
+        <div layout="row" layout-margin layout-align="space-around center">
+            <div flex="45" class="emotions" ng-click="ec.alert()">Alert my responder I need help.</div>
+            <div flex="45" class="emotions" ng-click="ec.back()">None of these fit, go back.</div>
+        </div>
+
+    </div>
 </div>

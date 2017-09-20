@@ -21,7 +21,6 @@ router.get('/', function (req, res) {
                 });//end of client.query
         } //end of first else
     });// end of pool.connect
-    //need sql code
 });//end of router.post
 
 module.exports = router;

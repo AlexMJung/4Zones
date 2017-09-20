@@ -6,6 +6,21 @@ app.service('UserService', function ($http, $location) {
     };
 
 
+
+    self.newUser = function(addedUser){
+        console.log('newUser() hit');
+        $http.post('/user/add', addedUser).then(function (response){
+            console.log(response);
+            if(response.status === 200){
+                alert("User added! Please note students will not show on the dashboard until they have made their first entry");
+            }else{
+                alert("User not added. Please try again.")
+            }
+        })        
+    }
+
+
+
        self.getuser= function () {
             console.log('UserService -- getuser');
             $http.get('/user').then(function (response) {
