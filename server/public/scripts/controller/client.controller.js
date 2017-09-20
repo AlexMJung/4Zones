@@ -12,7 +12,13 @@ app.controller('UserController', ['UserService', '$location', 'serviceService', 
         var path = $location.path('/info');
     }
 
+    vm.userHistory = function(z){
+        console.log("this item was passed in", z);
+        
+    }
+
+    
+    
     serviceService.getUsers();
 
-   
 }]);

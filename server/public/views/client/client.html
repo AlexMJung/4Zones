@@ -1,12 +1,12 @@
 <div class="container">
     <div id="landing" flex>
-        <h1 id="welcome" class="lead">Welcome, {{uc.userService.userObject.name}} {{uc.userService.userObject.lname}}!</h1> 
+        <h1 id="welcome" class="lead">Welcome, {{uc.userService.userObject.name}} {{uc.userService.userObject.name}}!</h1> 
         <button id="logout" class="btn btn-default" ng-click="uc.logout()">Log Out</button>
         <div id="landinglogin">
             <h1>User's current states:</h1>
-            <div ng-repeat="users in uc.Users.list"  class={{users.zone}} ng-click=uc.userHistory({{user.pin}}) >{{users.first_name}} {{users.last_name}} {{users.created_at}}</div>
-        
+             <a ng-repeat="participant in uc.Users.list" ng-href="#!/info/{{participant.pin}}"><div   class={{participant.zone}}>{{participant.first_name}} {{participant.last_name}} {{participant.created_at | date : "short"}}</div></a>
         <div id="landingNewUser" ng-click=uc.newUser()> Add A User</div>
         </div>
     </div>
 </div>
+{{uc.Users.list.pin}}
