@@ -87,6 +87,10 @@ app.controller('emoController', ['loginService', '$location', function (loginSer
         console.log('clicked to log emotion', self.newData);
         loginService.addEmotion(self.newData);
     };
+    
+    self.alertResponder = function (){
+        loginService.alertResponder();
+    };
 
     self.back = function () {
         loginService.back();

@@ -6,7 +6,8 @@ app.service('loginService', ['$http', '$location', function ($http, $location) {
         PIN: {},
         Zone: {},
         Emotion: {},
-        LoggedIn: {}
+        LoggedIn: {},
+        responderAlerted: {}
     };
 
     self.message ="Please enter your PIN."
@@ -60,6 +61,17 @@ app.service('loginService', ['$http', '$location', function ($http, $location) {
             var path = $location.path('/strategies');  
         });
     };//end of seld.addEmotion
+
+    self.alertResponder = function () {
+        console.log('alert responder button hit.');
+        self.User.responderAlerted = true;
+        alert("Your assigned responder has been messaged")
+        
+        
+    }
+
+
+
 
     self.back = function(){
         self.User.Zone = {};
