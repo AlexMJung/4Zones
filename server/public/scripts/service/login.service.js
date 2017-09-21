@@ -25,7 +25,7 @@ app.service('loginService', ['$http', '$location', function ($http, $location) {
                 console.log('logged in? why you no move on?');
                 
                 if (self.User.LoggedIn == true) {
-                    // $location.path('/zones');
+                    $location.path('/zones');
                     console.log('hit if loggedin true');
                     
                 } else {
@@ -66,7 +66,7 @@ app.service('loginService', ['$http', '$location', function ($http, $location) {
         console.log('alert responder button hit.');
         self.User.responderAlerted = true;
         alert("Your assigned responder has been messaged")
-        
+
         
     }
 
