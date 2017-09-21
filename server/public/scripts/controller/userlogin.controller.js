@@ -5,6 +5,7 @@ app.controller('loginController', ['loginService', function (loginService) {
     self.pinCheck = {};;
     self.User = loginService.User;
     self.message = loginService.message
+
        self.check = function (a, b, c, d) {
         self.pinCheck = a + b + c + d;
         console.log('clicked to login', self.pinCheck);
