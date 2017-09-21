@@ -27,7 +27,37 @@ router.post('/add', function (req, res) {
     });// end of pool.connect
 });
 
-
+router.get('/history', function (req, res) {
+    console.log('get /user route');
+    // check if logged in
+    if (req.isAuthenticated()) {
+        // send back user object from database
+        console.log('logged in', req.user);
+        pool.connect(function (errorConnectingToDatabase, client, done) {
+            if (errorConnectingToDatabase) {
+                console.log('Error connecting to database', errorConnectingToDatabase);
+                res.sendStatus(500);
+            } else {
+                client.query("SELECT * FROM logs WHERE pin= $1 ORDER BY created_at desc;",
+                    [req.query.pin], function (errorMakingQuery, result) {
+                        done();
+                        if (errorMakingQuery) {
+                            console.log('Error making database query', errorMakingQuery);
+                            res.sendStatus(500);
+                        } else {
+                            console.log('results sent', result);
+                            res.send(result.rows);
+                        }//end of nested else
+                    });//end of client.query
+            } //end of first else
+        });// end of pool.connect
+    } else {
+        // failure best handled on the server. do redirect here.
+        console.log('not logged in');
+        // should probably be res.sendStatus(403) and handled client-side, esp if this is an AJAX request (which is likely with AngularJS)
+        res.send(false);
+    }
+});
 
 
 // Handles Ajax request for user information if user is authenticated

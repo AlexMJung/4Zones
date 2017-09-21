@@ -1,4 +1,5 @@
 var app = angular.module('userApp', ['ngRoute', 'ngMaterial']);
+// agGrid.initialiseAgGridWithAngular1(angular); //move into dependecies 'agGrid'
 
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/', {
@@ -41,7 +42,17 @@ app.config(['$routeProvider', function ($routeProvider) {
                     return UserService.getuser();
                 }
             }
-        })
+        }).when('/info/:id', {
+    templateUrl: '/views/client/participantinfo.html',
+    controller: 'ParticipentController',
+    controllerAs: 'pc',
+    resolve: {
+        getuser: function (UserService) {
+            return UserService.getuser();
+        }
+    }
+})
+
         .otherwise({
             redirectTo: '/'
         });

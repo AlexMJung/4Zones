@@ -1,0 +1,85 @@
+<div class="background" layout="column">
+    <div id="header">
+        <h1 id="welcome" class="lead">Welcome, {{pc.userObject.name}}!</h1>
+        
+        <button ng-href="#!/user">User Panel</button>
+    </div>
+    <div class="background_base">
+        <div class="section" layout="row" layout-align="space-around center">
+            <div flex="15">
+                <label for=“firstname”>First Name:</label><br>
+                <input type=“text” ng-model="pc.updateUser.first_name"></input>
+            </div>
+            <div flex="15">
+                <label for=“lastname”>Last Name:</label><br>
+                <input type=“text” ng-model="pc.updateUser.last_name" />
+            </div>
+            <div flex="15">
+                <label for=“PIN”>Pin:</label><br>
+                <input type=“text” ng-model="pc.updateUser.pin" maxlength="4" />
+            </div>
+            <div flex="15">
+                <label for="confirmpin">Confirm PIN:</label><br>
+                <input type=“text” ng-model="pc.updateUser.confirmpin" maxlength="4" />
+            </div>
+            <div flex="15">
+                <label for=“email”>Responder Email:</label><br>
+                <input type=“text” ng-model="pc.updateUser.rEmail" />
+            </div>
+        </div>
+
+        <div layout-wrap layout="row" layout-align="center center" layout-padding>
+            <div flex="20" flex-offset="5">
+                <label for="emotionalawareness"> Emotional Awareness:</label><br>
+            </div>
+            <div flex="10">
+                <md-checkbox md-no-ink aria-label="Checkbox low" ng-model="pc.data.low" class="md-primary" ng-change="pc.checkboxSelected('low')">
+                    Low
+                </md-checkbox>
+            </div>
+            <div flex="10">
+                <md-checkbox md-no-ink aria-label="Checkbox Base" ng-model="pc.data.base" class="md-primary" ng-change="pc.checkboxSelected('base')">
+                    Base
+                </md-checkbox>
+            </div>
+            <div flex="10">
+                <md-checkbox md-no-ink aria-label="Checkbox advanced" ng-model="pc.data.advanced" class="md-primary" ng-change="pc.checkboxSelected('advanced')">
+                    Advanced
+                </md-checkbox>
+            </div>
+            <div flex="45">
+                <md-button class="md-raised md-primary" ng-click="pc.addUser()">Update User Info</md-button>
+            </div>
+        </div>
+        <!-------------------------------------------------------user history chart---------------------------->
+        <hr>
+        <h1> User History </h1>
+        <br>
+            <!-- <div ag-grid="pc.gridOptions" id="historyGrid" style="height: 100%;" class="ag-blue">
+
+            </div> -->
+         
+        <br>
+        <table>
+            <thead>
+                <td>Posted</td>
+                <td>Zone</td>
+                <td>Emotion</td>
+                <td>Cause</td>
+                <td>Response</td>
+                <td>Assistance Requested?</td>
+                <td>{{pc.userObject.name}} notes</td>
+            </thead>
+            <tbody>
+                <td></td>
+            </tbody>
+        </table>
+         <tr ng-repeat="history in pc.userService.gotParticipantHistory.list">
+             <td>{{history}}</td>
+
+         </tr>
+        <h2>{{pc.userService.gotParticipantHistory.list}}
+
+        </h2>
+    </div>
+</div>

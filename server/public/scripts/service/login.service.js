@@ -6,23 +6,31 @@ app.service('loginService', ['$http', '$location', function ($http, $location) {
         PIN: {},
         Zone: {},
         Emotion: {},
-        LoggedIn:  false
+        LoggedIn: {}
     };
+
+    self.message ="Please enter your PIN."
 
     self.check = function (pinCheck) {
         console.log('self.check hit in service');
         $http.get('/login/' + pinCheck).then(function (response) {
             self.User.LoggedIn = false;
-            //console.log('service post response: ', response.data[0]); 
+            console.log('service post response: ', response.data[0]); 
             if (response.data[0] != undefined){ 
                 self.User.Name = response.data[0].first_name + " " + response.data[0].last_name;
                 self.User.PIN = response.data[0].pin;
                 self.User.LoggedIn = response.data[0].LoggedIn;
             }}).then(function () {
+                console.log('logged in? why you no move on?');
+                
                 if (self.User.LoggedIn == true) {
-                    var path = $location.path('/zones');
+                    // $location.path('/zones');
+                    console.log('hit if loggedin true');
+                    
                 } else {
-                    var path = $location.path('/');
+                    self.message = "PIN not found please try again."
+                    console.log('hit if loggedin false');
+                    $location.path('/zones');
                 };
         });
     };//end of self.check

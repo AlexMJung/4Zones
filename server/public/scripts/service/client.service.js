@@ -5,6 +5,29 @@ app.service('UserService', function ($http, $location) {
     self.userObject = {
     };
 
+    self.gotParticipantHistory = { list: {}
+    };
+
+    self.userHistory = function (z) {
+        console.log("this item was passed in", z);
+        $http({
+            method: 'GET',
+            url:'/user/history',
+            params: {
+                pin: z
+            }
+        }).then(function (response) {
+            console.log(response);
+            if (response.status === 200) {
+              self.gotParticipantHistory.list = response  
+            };
+            console.log('gotParticipantHistory', self.gotParticipantHistory);
+        
+        })  
+
+
+    };//end of userHistory
+
 
 
     self.newUser = function(addedUser){
