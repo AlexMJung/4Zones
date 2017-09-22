@@ -1,4 +1,4 @@
-app.controller('InfoController', function (UserService) {
+app.controller('InfoController', function (UserService, $location) {
     // console.log('InfoController created');
     var self = this;
     self.message = "No user history yet.Please complete new user registration above and click ADD NEW USER."
@@ -9,6 +9,9 @@ app.controller('InfoController', function (UserService) {
         supervisor: UserService.userObject
     };
 
+    self.dashboard = function () {
+        $location.path('/user');
+    }
     
 
     //allows only show one checked checkbox 
@@ -25,6 +28,9 @@ app.controller('InfoController', function (UserService) {
         }
     }//end of addUser
 
+    self.dashboard = function () {
+        $location.path('/user');
+    }
 
     self.checkboxSelected = function (z) {
         if (z === "low") {

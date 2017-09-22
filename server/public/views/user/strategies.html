@@ -1,18 +1,18 @@
-<div class="background">
-    <div id={{sc.User.Zone}}>
-        <div class="instructions">
+<div layout="column" id={{sc.User.Zone}}>
+    <div layout-margin layout-align="center center">
+        <div flex="80" class="instructions">
             <h2>Please try these strategies. Click done to close. </h2>
         </div>
-        <div layout="row" layout-margin layout-align="space-around center">
-            <div class="strategies">Take 5 deep breaths</div>
-            <div class="strategies">Look at this puppy</div>
-        </div>
-        <div layout="row" layout-margin layout-align="space-around center">
-            <div class="strategies">go to the restroom and wash your face</div>
-            <div class="strategies" ng-click="sc.alertResponder()">Alert my responder I need help.</div>
+        <div flex="80" class="strat" layout-align="center center">
+            <ul>
+                <li>Take 5 deep breaths.</li>
+                <li>Look at this puppy.</li>
+                <li>Go to the restroom and wash your face.</li>
+            </ul>
         </div>
         <div layout="row" layout-align="center center">
-            <div class="strategies" ng-click="sc.out()">Done</div>
+            <div flex="37" class="strategies" ng-click="sc.alertResponder()">Alert my responder I need help.</div>
+            <div flex="37" class="strategies" ng-click="sc.out()">Done</div>
         </div>
     </div>
 </div>

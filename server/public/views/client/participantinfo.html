@@ -1,8 +1,8 @@
 <div class="background" layout="column">
     <div id="header">
         <h1 id="welcome" class="lead">Participant Name: {{pc.userService.gotParticipantHistory.participant}}!</h1>
-        
-        <button ng-href="/#!/user">User Panel</button>
+
+        <button ng-click="pc.dashboard()">User Panel</button>
     </div>
     <div class="background_base">
         <div class="section" layout="row" layout-align="space-around center">
@@ -54,7 +54,25 @@
         <!-------------------------------------------------------user history chart---------------------------->
         <hr>
         <h1> User History </h1>
-        <br>    
+        <md-content class="gray" layout-padding ng-cloak>
+            <div class="gray" layout="row" layout-align="center center">
+                <div flex="20">
+                    <h4>Select a date:</h4>
+                </div>
+                <div flex="40">
+                    <md-input-container flex="40">
+                        <label>Start date</label>
+                        <md-datepicker ng-model="pc.myStartDate.Date" name="dateField" ng-change="pc.userHistoryFiltered(pc.myStartDate)"></md-datepicker>
+                    </md-input-container>
+                </div>
+                <div flex="40">
+                    <md-input-container flex="40">
+                        <label>End date</label>
+                        <md-datepicker ng-model="pc.myEndDate.Date" name="dateField" ng-change="pc.userHistoryFiltered(pc.myEndDate)"></md-datepicker>
+                    </md-input-container>
+                </div>
+            </div>
+        </md-content>
         <br>
         <table id="userHistory">
             <thead>
@@ -67,17 +85,17 @@
                 <td>{{pc.userObject.name}} Notes.</td>
             </thead>
             <tbody>
-        
-         <tr ng-repeat="history in pc.userService.gotParticipantHistory.list.data">
-             <td>{{history.created_at | date: "short"}}</td>
-            <td>{{history.zone}}</td>
-<td>{{history.emotion}}</td>
-<td>{{history.cause}}</td>
-<td>{{history.response}}</td>
-<td>{{history.responderalerted}}</td>
-<td>{{history.notes}}</td>
-         </tr>
-</tbody>
+
+                <tr ng-repeat="history in pc.userService.gotParticipantHistory.list.data">
+                    <td>{{history.created_at | date: "short"}}</td>
+                    <td>{{history.zone}}</td>
+                    <td>{{history.emotion}}</td>
+                    <td>{{history.cause}}</td>
+                    <td>{{history.response}}</td>
+                    <td>{{history.responderalerted}}</td>
+                    <td>{{history.notes}}</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>

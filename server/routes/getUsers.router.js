@@ -3,7 +3,7 @@ var router = express.Router();
 var pool = require('../modules/pool');
 
 router.get('/', function (req, res) {
-    console.log('router.getUsers hit');
+    console.log('**********************router.gethit************');
     pool.connect(function (errorConnectingToDatabase, client, done) {
         if (errorConnectingToDatabase) {
             console.log('Error connecting to database', errorConnectingToDatabase);

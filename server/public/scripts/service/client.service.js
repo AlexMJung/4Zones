@@ -5,9 +5,34 @@ app.service('UserService', function ($http, $location) {
     self.userObject = {
     };
 
+
+    self.start={}
+    self.end={}
+    self.conStart=
+
     self.gotParticipantHistory = { list: {},
     participant: {}
     };
+
+
+    
+
+    self.userHistoryFiltered= function(z){
+        console.log('history filtered was passed', z, self.start.Date, self.end.Date);
+        
+        $http({
+            method: 'GET',
+            url: '/user/filteredhistory/' + z + '/' + self.start.Date + '/' + self.end.Date 
+        }).then(function (response) {
+            console.log(response);
+            if (response.status === 200) {
+                self.gotParticipantHistory.list = response
+            };
+            console.log('gotParticipantHistory', self.gotParticipantHistory);
+        })
+
+    }
+
 
     self.userHistory = function (z) {
         console.log("this item was passed in", z);
@@ -16,7 +41,7 @@ app.service('UserService', function ($http, $location) {
             url:'/user/history',
             params: {
                 pin: z
-            }
+            },
         }).then(function (response) {
             console.log(response);
             if (response.status === 200) {
@@ -55,13 +80,10 @@ app.service('UserService', function ($http, $location) {
         })        
     }
 
-
-
        self.getuser= function (z) {
             console.log('UserService -- getuser');
-            $http.get('/user/'+ z).then(function (response) {
-                console.log(response);
-                
+            $http.get('/user').then(function (response) {
+                console.log(response);            
                 if (response.data.username) {
                     // user has a curret session on the server
                     self.userObject.userName = response.data.username;
@@ -80,12 +102,11 @@ app.service('UserService', function ($http, $location) {
             });
         },
 
-
         self.logout= function () {
             console.log('UserService -- logout');
             $http.get('/user/logout').then(function (response) {
                 console.log('UserService -- logout -- logged out');
-                $location.path("/#!//clientLogin");
+                $location.path("/clientLogin");
             });
         }
 });

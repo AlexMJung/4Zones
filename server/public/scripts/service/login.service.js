@@ -7,7 +7,7 @@ app.service('loginService', ['$http', '$location', function ($http, $location) {
         Zone: {},
         Emotion: {},
         LoggedIn: {},
-        responderAlerted: {}
+        responderAlerted: false
     };
 
     self.message ="Please enter your PIN."

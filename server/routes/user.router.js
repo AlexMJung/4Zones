@@ -59,6 +59,41 @@ router.get('/history', function (req, res) {
     }
 });
 
+router.get('/filteredhistory/:pin/:startdate/:enddate', function (req, res) {
+    console.log('get /user route');
+    var pin = req.body.pin;
+    var startdate = req.body.startdate;
+    var enddate = req.body.enddate;
+    // check if logged in
+    if (req.isAuthenticated()) {
+        // send back user object from database
+        console.log('logged in', req.user);
+        pool.connect(function (errorConnectingToDatabase, client, done) {
+            if (errorConnectingToDatabase) {
+                console.log('Error connecting to database', errorConnectingToDatabase);
+                res.sendStatus(500);
+            } else {
+                client.query("SELECT * FROM logs WHERE  $1 >= created_at AND created_at >= $2 and pin= $3 ORDER BY created_at desc;",                
+                    [pin, enddate, startdate], function (errorMakingQuery, result) {
+                        done();
+                        if (errorMakingQuery) {
+                            console.log('Error making database query', errorMakingQuery);
+                            res.sendStatus(500);
+                        } else {
+                            console.log('results sent', result);
+                            res.send(result.rows);
+                        }//end of nested else
+                    });//end of client.query
+            } //end of first else
+        });// end of pool.connect
+    } else {
+        // failure best handled on the server. do redirect here.
+        console.log('not logged in');
+        // should probably be res.sendStatus(403) and handled client-side, esp if this is an AJAX request (which is likely with AngularJS)
+        res.send(false);
+    }
+});
+
 //     // Used to add the name of the student at the top of the user history screen not working yet. 
 // router.get('/history/name', function (req, res) {
 //     console.log('get history name route');

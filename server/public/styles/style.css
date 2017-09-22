@@ -3,42 +3,57 @@ body{
     margin: 0;
     padding: 0;
     color: white;
-    z-index: -6;
+    z-index: -20;
+}
+a{
+    text-decoration: none;
 }
 .blue{
 background-color: #0B5292;
-    height: 80px;
-    width: 280px;
+    color: white;
+    height: 60px;
+    width: 300px;
+    font-size: 20px;
+    align-content: center;
     z-index: 2;
     margin: 10px 10px 10px 10px;
-z-index: -5;
+    font-weight: bold;
 }
 
 .green{
 background-color: #1A6443;
-    height: 80px;
-    width: 280px;
+   color: white;
+    height: 60px;
+    width: 300px;
+    font-size: 20px;
+    align-content: center;
     z-index: 2;
     margin: 10px 10px 10px 10px;
-z-index: -5;
+    font-weight: bold;
 }
 .yellow{
 background-color: #FCF005;
-color:black;
-    height: 80px;
-    width: 280px;
+   color: white;
+    height: 60px;
+    width: 300px;
+    font-size: 20px;
+    align-content: center;
     z-index: 2;
     margin: 10px 10px 10px 10px;
-z-index: -5;
+    font-weight: bold;
 }
 .red{
 background-color: #B5102D;
-    height: 80px;
-    width: 280px;
+   color: white;
+    height: 60px;
+    width: 300px;
+    font-size: 20px;
+    align-content: center;
     z-index: 2;
     margin: 10px 10px 10px 10px;
-z-index: -5;
+    font-weight: bold;
 }
+
 
 #pinBox{
     background-color:black;
@@ -128,10 +143,6 @@ h1{
     text-align: center;
     z-index: 1
 }
-#logout{
-    display: flex;
-    float: right;
-}
 
 #landinglogin{
     position: fixed;
@@ -153,12 +164,15 @@ h1{
 }
 
 #landingNewUser{
-        background-color: purple;
+    background-color: purple;
     color: white;
-    height: 80px;
-    width: 280px;
+    height: 60px;
+    width: 300px;
+    font-size: 30px;
+    align-content: center;
     z-index: 2;
-    margin: 10px 10px 10px 10px
+    margin: 10px 10px 10px 10px;
+    font-weight: bold;
 }
 #header{
     background-color: #7313AB;
@@ -197,6 +211,7 @@ h1{
 
 .background{
     height: 100vh;
+     background-color: #000000;
 }
 
 #blue{
@@ -223,9 +238,6 @@ height: 100vh;
 z-index: -5;
 }
 
-.background{
-    background-color: #000000;
-}
 .background_base{
     background-color: rgb(141, 138, 138);
     margin: auto;
@@ -269,4 +281,18 @@ background-color: #B5102D;
 height: 25%;
 min-height: 170px;
 z-index: -5;
+}
+.gray{    
+    background-color: rgb(141, 138, 138);
+    margin: auto;
+    color: #ffffff;
+}
+.strat{
+     position: relative;
+    text-align: center;
+    background-color: whitesmoke;
+    color:black;
+    height: 400px;
+    margin: 2px 2px 2px 2px;
+    font-size: 40px
 }

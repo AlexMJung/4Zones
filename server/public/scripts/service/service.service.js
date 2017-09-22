@@ -1,4 +1,4 @@
-app.service('serviceService', ['$http', '$location', function ($http, $location) {
+app.service('ServiceService', ['$http', '$location', function ($http, $location) {
     var self = this;
     console.log('login.service loaded');
 
@@ -6,7 +6,7 @@ app.service('serviceService', ['$http', '$location', function ($http, $location)
 
     self.getUsers = function (){
         console.log("self.getUsers hit in service");
-        $http.get('/getUsers').then(function (response) {
+        $http.get('/getusers').then(function (response) {
             self.Users.list= response.data
             console.log("response from server is", response);
             

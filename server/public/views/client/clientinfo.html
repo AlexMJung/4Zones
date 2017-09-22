@@ -1,7 +1,7 @@
 <div class="background" layout="column">
     <div id="header">
         <h1 id="welcome" class="lead">Welcome, {{ic.userObject.name}}!</h1>
-        <button ng-href="#!/user">User Panel</button>
+        <button ng-click="ic.dashboard()">User Dashboard</button>
     </div>
     <div class="background_base">
         <div class="section" layout="row" layout-align="space-around center">
@@ -54,6 +54,6 @@
         <h1> User History </h1>
 <br>
 <br>
-        <h2>{{ic.message}}</h2>
+ 
     </div>
 </div>
