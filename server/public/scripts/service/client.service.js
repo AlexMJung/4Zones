@@ -5,7 +5,8 @@ app.service('UserService', function ($http, $location) {
     self.userObject = {
     };
 
-    self.gotParticipantHistory = { list: {}
+    self.gotParticipantHistory = { list: {},
+    participant: {}
     };
 
     self.userHistory = function (z) {
@@ -22,8 +23,20 @@ app.service('UserService', function ($http, $location) {
               self.gotParticipantHistory.list = response  
             };
             console.log('gotParticipantHistory', self.gotParticipantHistory);
-        
-        })  
+         })
+        //.then(function(z){
+        //     $http({
+        //         method: 'GET',
+        //         url: 'user/history/name',
+        //         params: {
+        //             pin: z
+        //         }
+        // }).then(function(response){
+        //     self.gotParticipantHistory.participant = response
+        //     console.log(response)
+        // })
+
+      //  })
 
 
     };//end of userHistory
@@ -44,9 +57,9 @@ app.service('UserService', function ($http, $location) {
 
 
 
-       self.getuser= function () {
+       self.getuser= function (z) {
             console.log('UserService -- getuser');
-            $http.get('/user').then(function (response) {
+            $http.get('/user/'+ z).then(function (response) {
                 console.log(response);
                 
                 if (response.data.username) {

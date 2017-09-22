@@ -10,8 +10,8 @@ router.post('/', function (req, res) {
             res.sendStatus(500);
         } else {
             client.query(
-                'INSERT INTO "logs"("pin", "zone", "emotion") VALUES ($1, $2, $3);',
-                [req.body.PIN, req.body.Zone, req.body.Emotion], 
+                'INSERT INTO "logs"("pin", "zone", "emotion", "responderalerted") VALUES ($1, $2, $3, $4);',
+                [req.body.PIN, req.body.Zone, req.body.Emotion, req.body.responderAlerted], 
                 function (errorMakingQuery, result) {
                 done();
                 if (errorMakingQuery) {

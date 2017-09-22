@@ -1,8 +1,8 @@
 <div class="background" layout="column">
     <div id="header">
-        <h1 id="welcome" class="lead">Welcome, {{pc.userObject.name}}!</h1>
+        <h1 id="welcome" class="lead">Participant Name: {{pc.userService.gotParticipantHistory.participant}}!</h1>
         
-        <button ng-href="#!/user">User Panel</button>
+        <button ng-href="/#!/user">User Panel</button>
     </div>
     <div class="background_base">
         <div class="section" layout="row" layout-align="space-around center">
@@ -54,13 +54,9 @@
         <!-------------------------------------------------------user history chart---------------------------->
         <hr>
         <h1> User History </h1>
+        <br>    
         <br>
-            <!-- <div ag-grid="pc.gridOptions" id="historyGrid" style="height: 100%;" class="ag-blue">
-
-            </div> -->
-         
-        <br>
-        <table>
+        <table id="userHistory">
             <thead>
                 <td>Posted</td>
                 <td>Zone</td>
@@ -68,18 +64,20 @@
                 <td>Cause</td>
                 <td>Response</td>
                 <td>Assistance Requested?</td>
-                <td>{{pc.userObject.name}} notes</td>
+                <td>{{pc.userObject.name}} Notes.</td>
             </thead>
             <tbody>
-                <td></td>
-            </tbody>
-        </table>
-         <tr ng-repeat="history in pc.userService.gotParticipantHistory.list">
-             <td>{{history}}</td>
-
+        
+         <tr ng-repeat="history in pc.userService.gotParticipantHistory.list.data">
+             <td>{{history.created_at | date: "short"}}</td>
+            <td>{{history.zone}}</td>
+<td>{{history.emotion}}</td>
+<td>{{history.cause}}</td>
+<td>{{history.response}}</td>
+<td>{{history.responderalerted}}</td>
+<td>{{history.notes}}</td>
          </tr>
-        <h2>{{pc.userService.gotParticipantHistory.list}}
-
-        </h2>
+</tbody>
+        </table>
     </div>
 </div>
