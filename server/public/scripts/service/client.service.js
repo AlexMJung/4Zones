@@ -11,9 +11,9 @@ app.service('UserService', function ($http, $location) {
     self.conStart=
 
     self.gotParticipantHistory = { list: {},
-    participant: {}
     };
 
+    self.participentName= {};
 
     
 
@@ -32,7 +32,18 @@ app.service('UserService', function ($http, $location) {
         })
 
     }
-
+    self.getParticipantName =function(z){
+        console.log('item passed to get participent name', z);
+        $http({
+            method: 'GET',
+            url: '/user/name/' + z
+        }).then(function (response) {
+            console.log(response);
+            if (response.status === 200) {
+                self.participentName = response
+            };
+        })  
+    };//end of getParticipantName
 
     self.userHistory = function (z) {
         console.log("this item was passed in", z);
@@ -49,21 +60,6 @@ app.service('UserService', function ($http, $location) {
             };
             console.log('gotParticipantHistory', self.gotParticipantHistory);
          })
-        //.then(function(z){
-        //     $http({
-        //         method: 'GET',
-        //         url: 'user/history/name',
-        //         params: {
-        //             pin: z
-        //         }
-        // }).then(function(response){
-        //     self.gotParticipantHistory.participant = response
-        //     console.log(response)
-        // })
-
-      //  })
-
-
     };//end of userHistory
 
 

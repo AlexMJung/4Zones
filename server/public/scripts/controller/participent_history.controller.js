@@ -9,17 +9,18 @@ app.controller('ParticipentController', function (UserService, $routeParams, $lo
     self.updateUser = {
         supervisor: UserService.userObject
     };
+    self.participentName = UserService.participentName
 
     self.myStartDate = UserService.start;
     self.myEndDate = UserService.end;
-    
-    console.log(self.myEndDate);
-    console.log(self.myStartDate);
     
     self.dashboard = function(){
         var path = $location.path('/user')
     }
     
+    self.getParticipantName = function(){
+        UserService.getParticipantName($routeParams.id);
+    }
 
     UserService.userHistory($routeParams.id);
 
@@ -63,5 +64,6 @@ app.controller('ParticipentController', function (UserService, $routeParams, $lo
 
     }//end of self.checkboxSelected
 
+    self.getParticipantName();
 
 })

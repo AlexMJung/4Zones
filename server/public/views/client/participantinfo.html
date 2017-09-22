@@ -1,6 +1,6 @@
 <div class="background" layout="column">
     <div id="header">
-        <h1 id="welcome" class="lead">Participant Name: {{pc.userService.gotParticipantHistory.participant}}!</h1>
+        <h1 id="welcome" class="lead">Participant Name: {{pc.participentName}}!</h1>
 
         <button ng-click="pc.dashboard()">User Panel</button>
     </div>
@@ -74,6 +74,7 @@
             </div>
         </md-content>
         <br>
+    
         <table id="userHistory">
             <thead>
                 <td>Posted</td>
@@ -88,12 +89,12 @@
 
                 <tr ng-repeat="history in pc.userService.gotParticipantHistory.list.data">
                     <td>{{history.created_at | date: "short"}}</td>
-                    <td>{{history.zone}}</td>
+                    <td class="small{{history.zone}}">{{history.zone}}</td>
                     <td>{{history.emotion}}</td>
                     <td>{{history.cause}}</td>
                     <td>{{history.response}}</td>
                     <td>{{history.responderalerted}}</td>
-                    <td>{{history.notes}}</td>
+                    <td>{{history.notes}}<button ng-click="addNote">+</button></td>
                 </tr>
             </tbody>
         </table>
