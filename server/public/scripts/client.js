@@ -1,4 +1,4 @@
-var app = angular.module('userApp', ['ngRoute', 'ngMaterial']);
+var app = angular.module('userApp', ['ngRoute', 'ngMaterial', /*'$mdDateLocaleProvider'*/]);
 // agGrid.initialiseAgGridWithAngular1(angular); //move into dependecies 'agGrid'
 
 app.config(['$routeProvider', function ($routeProvider) {

@@ -8,42 +8,70 @@ app.service('UserService', function ($http, $location) {
 
     self.start={}
     self.end={}
-    self.conStart=
+  
 
     self.gotParticipantHistory = { list: {},
     };
 
-    self.participentName= {};
-
-    
-
-    self.userHistoryFiltered= function(z){
-        console.log('history filtered was passed', z, self.start.Date, self.end.Date);
+    self.participent = {};
+    // self.getParticipant = function(){
+    //     console.log('self.getParticipant Ran');
+    //     $http({
+    //         method:'GET',
+    //         ulr: '/user/'
+    //     })
         
-        $http({
-            method: 'GET',
-            url: '/user/filteredhistory/' + z + '/' + self.start.Date + '/' + self.end.Date 
-        }).then(function (response) {
-            console.log(response);
-            if (response.status === 200) {
-                self.gotParticipantHistory.list = response
-            };
-            console.log('gotParticipantHistory', self.gotParticipantHistory);
-        })
+    // }
+  
+    // self.updateParticipantStuff = function(z){
+    //     console.log('updatedParticipant was passed', z);
+    //     $http({
+    //         method: 'PUT',
+    //         url: '/user/updateParticipant',
+    //         data: z,      
+    //     }).then(function (response) {
+    //         console.log(response);
+    //         if (response.status === 200) {
+    //             self.gotParticipantHistory.list = response
+    //         };
+    //         console.log('gotParticipantHistory', self.gotParticipantHistory);
+    //     })
+    // }
 
-    }
-    self.getParticipantName =function(z){
-        console.log('item passed to get participent name', z);
-        $http({
-            method: 'GET',
-            url: '/user/name/' + z
-        }).then(function (response) {
-            console.log(response);
-            if (response.status === 200) {
-                self.participentName = response
-            };
-        })  
-    };//end of getParticipantName
+    // self.userHistoryFiltered= function(z){
+    //     console.log('history filtered was passed', z, self.start.Date, self.end.Date);
+        
+    //     $http({
+    //         method: 'GET',
+    //         url: '/user/filteredhistory/',
+    //         params: {
+    //             pin: z,
+    //             start: self.start.Date,
+    //             end: self.end.Date
+    //         }
+    //         //  + z + '/' + self.start.Date + '/' + self.end.Date 
+    //     }).then(function (response) {
+    //         console.log(response);
+    //         if (response.status === 200) {
+    //             self.gotParticipantHistory.list = response
+    //         };
+    //         console.log('gotParticipantHistory', self.gotParticipantHistory);
+    //     })
+    // }//userHistoryFiltered
+
+    // self.getParticipantName =function(z){
+    //     console.log('item passed to get participent name', z);
+    //     $http({
+    //         method: 'GET',
+    //         url: '/user/name/' + z
+    //     }).then(function (response) {
+    //         console.log(response);
+    //         if (response.status === 200) {
+    //             self.participentName = response.rows
+    //         };
+    //         console.log(self.participentName);   
+    //     })  
+    // };//end of getParticipantName
 
     self.userHistory = function (z) {
         console.log("this item was passed in", z);

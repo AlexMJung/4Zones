@@ -1,23 +1,24 @@
-<div layout="column" layout-align="center center">
-
-    <div class="filler">
-    </div>
-    <div id='pinBox' layout-align="center center">
+<div layout="column" layout-fill layout-align="center center">
+    <main flex>
+    <div flex="80" flex-offset="10" id='pinBox'  layout-align="center center">
+       <div flex="50" flex-offset="25">
         <p id="pin_label"> {{lc.message}} </p>
-        <div layout="row" layout-margin layout-align="center center">
-            <input flex="15" class="pin" type="password" ng-model="lc.pin.a" ng-change="lc.check(lc.pin.a,lc.pin.b,lc.pin.c,lc.pin.d)"
-                maxlength="1"></input> -
-            <input flex="15" class="pin" type="password" ng-model="lc.pin.b" ng-change="lc.check(lc.pin.a,lc.pin.b,lc.pin.c,lc.pin.d)"
-                maxlength="1"></input> -
-            <input flex="15" class="pin" type="password" ng-model="lc.pin.c" ng-change="lc.check(lc.pin.a,lc.pin.b,lc.pin.c,lc.pin.d)"
-                maxlength="1"></input> -
-            <input flex="15" class="pin" type="password" ng-model="lc.pin.d" ng-change="lc.check(lc.pin.a,lc.pin.b,lc.pin.c,lc.pin.d)"
-                maxlength="1"></input>
+        </div>
+        <div layout="row " layout-margin layout-align="center center ">
+            <input flex="15 " class="pin " type="text " ng-model="lc.pin.a " ng-change="lc.check(lc.pin.a,lc.pin.b,lc.pin.c,lc.pin.d) "
+                maxlength="1 "></input> -
+            <input flex="15 " class="pin " type="text " ng-model="lc.pin.b " ng-change="lc.check(lc.pin.a,lc.pin.b,lc.pin.c,lc.pin.d) "
+                maxlength="1 "></input> -
+            <input flex="15 " class="pin " type="text " ng-model="lc.pin.c " ng-change="lc.check(lc.pin.a,lc.pin.b,lc.pin.c,lc.pin.d) "
+                maxlength="1 "></input> -
+            <input flex="15 " class="pin " type="text " ng-model="lc.pin.d " ng-change="lc.check(lc.pin.a,lc.pin.b,lc.pin.c,lc.pin.d) "
+                maxlength="1 "></input>
         </div>
     </div>
-</div>
+    </main>
 
-<div layout="column" layout-align="stretch center">
+    <footer>
+<div layout="column " layout-align="stretch center ">
+    <md-button id="clientLoginButton " class="md-primary md-raised " ng-href="/#!/clientLogin ">Teacher Login</md-button>
 
-    <md-button id="clientLoginButton" class="md-primary md-raised" ng-href="/#!/clientLogin">Client Login</md-button>
-</div>
+</footer>

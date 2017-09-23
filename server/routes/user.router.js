@@ -25,7 +25,6 @@ router.post('/add', function (req, res) {
 });
 
 router.get('/history', function (req, res) {
-    console.log('get /user route');
     // check if logged in
     if (req.isAuthenticated()) {
         // send back user object from database
@@ -42,7 +41,7 @@ router.get('/history', function (req, res) {
                             console.log('Error making database query', errorMakingQuery);
                             res.sendStatus(500);
                         } else {
-                            console.log('results sent', result);
+                            // console.log('results sent', result);
                             res.send(result.rows);
                         }//end of nested else
                     });//end of client.query
@@ -56,57 +55,58 @@ router.get('/history', function (req, res) {
     }
 });
 
-router.get('/filteredhistory/:pin/:startdate/:enddate', function (req, res) {
-    console.log('get /user route');
-    var pin = req.body.pin;
-    var startdate = req.body.startdate;
-    var enddate = req.body.enddate;
-    // check if logged in
-    if (req.isAuthenticated()) {
-        // send back user object from database
-        console.log('logged in', req.user);
-        pool.connect(function (errorConnectingToDatabase, client, done) {
-            if (errorConnectingToDatabase) {
-                console.log('Error connecting to database', errorConnectingToDatabase);
-                res.sendStatus(500);
-            } else {
-                client.query("SELECT * FROM logs WHERE  $1 >= created_at AND created_at >= $2 and pin= $3 ORDER BY created_at desc;",                
-                    [pin, enddate, startdate], function (errorMakingQuery, result) {
-                        done();
-                        if (errorMakingQuery) {
-                            console.log('Error making database query', errorMakingQuery);
-                            res.sendStatus(500);
-                        } else {
-                            console.log('results sent', result);
-                            res.send(result.rows);
-                        }//end of nested else
-                    });//end of client.query
-            } //end of first else
-        });// end of pool.connect
-    } else {
-        // failure best handled on the server. do redirect here.
-        console.log('not logged in');
-        // should probably be res.sendStatus(403) and handled client-side, esp if this is an AJAX request (which is likely with AngularJS)
-        res.send(false);
-    }
-});
+// router.get('/filteredhistory/'/*:pin/:startdate/:enddate'*/, function (req, res) {
+//     // var pin = req.params.pin;
+//     // var startdate = req.params.startdate;
+//     // var enddate = req.params.enddate;
+//     console.log('passed to filteredhistory route', req.query.pin, req.query.start, req.query.end)
+//     // check if logged in
+//     if (req.isAuthenticated()) {
+//         // send back user object from database
+//         console.log('logged in', req.user);
+//         pool.connect(function (errorConnectingToDatabase, client, done) {
+//             if (errorConnectingToDatabase) {
+//                 console.log('Error connecting to database', errorConnectingToDatabase);
+//                 res.sendStatus(500);
+//             } else {
+//                 client.query("SELECT * FROM logs WHERE  $1 >= created_at AND created_at >= $2 and pin= $3 ORDER BY created_at desc;",                
+//                     [req.query.end, req.query.start, req.query.pin], function (errorMakingQuery, result) {
+//                         done();
+//                         if (errorMakingQuery) {
+//                             console.log('Error making database query', errorMakingQuery);
+//                             res.sendStatus(500);
+//                         } else {
+//                             console.log('results sent', result);
+//                             res.send(result.rows);
+//                         }//end of nested else
+//                     });//end of client.query
+//             } //end of first else
+//         });// end of pool.connect
+//     } else {
+//         // failure best handled on the server. do redirect here.
+//         console.log('not logged in');
+//         // should probably be res.sendStatus(403) and handled client-side, esp if this is an AJAX request (which is likely with AngularJS)
+//         res.send(false);
+//     }
+// });
 
     // Used to add the name of the student at the top of the user history screen not working yet. 
 router.get('/name/:pin', function (req, res) {
-    console.log('get history name route');
+    var pin = req.params.pin
+    console.log('get history name route', pin);
         pool.connect(function (errorConnectingToDatabase, client, done) {
             if (errorConnectingToDatabase) {
                 console.log('Error connecting to database', errorConnectingToDatabase);
                 res.sendStatus(500);
             } else {
-                client.query("SELECT first_name FROM participant WHERE pin= $1 ORDER BY created_at desc;",
-                    [req.query.pin], function (errorMakingQuery, result) {
+                client.query("SELECT * FROM participant WHERE pin= $1;",
+                    [pin], function (errorMakingQuery, result) {
                         done();
                         if (errorMakingQuery) {
                             console.log('Error making database query', errorMakingQuery);
                             res.sendStatus(500);
                         } else {
-                            console.log('results sent', result);
+                            console.log('results sent', result.rows);
                             res.send(result.rows);
                         }//end of nested else
                     });//end of client.query
@@ -114,6 +114,29 @@ router.get('/name/:pin', function (req, res) {
         });// end of pool.connect
     });
 
+
+router.put('/updateParticipant', function(req,res){
+    console.log('updateRoute hit');
+    pool.connect(function (errorConnectingToDatabase, client, done) {
+        if (errorConnectingToDatabase) {
+            console.log('Error connecting to database', errorConnectingToDatabase);
+            res.sendStatus(500);
+        } else {
+            client.query("SELECT * FROM participant WHERE pin= $1;",[req.body.oldPin], 
+            function (errorMakingQuery, result) {
+                    done();
+                    if (errorMakingQuery) {
+                        console.log('Error making database query', errorMakingQuery);
+                        res.sendStatus(500);
+                    } else {
+                        console.log('results sent', result.rows);
+                        res.send(result.rows);
+                    }//end of nested else
+                });//end of client.query
+        } //end of first else
+    });// end of pool.connect
+  
+})
 
 // Handles Ajax request for user information if user is authenticated
 router.get('/', function (req, res) {
@@ -144,6 +167,5 @@ router.get('/logout', function (req, res) {
     req.logOut();
     res.sendStatus(200);
 });
-
 
 module.exports = router;

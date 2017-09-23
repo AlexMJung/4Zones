@@ -3,25 +3,29 @@
         <h1 id="welcome" class="lead">Welcome, {{ic.userObject.name}}!</h1>
         <button ng-click="ic.dashboard()">User Dashboard</button>
     </div>
-    <div class="background_base">
+    <div class="login_base">
         <div class="section" layout="row" layout-align="space-around center">
-            <div flex="15">
+            <div flex="30">
                 <label for=“firstname”>First Name:</label><br>
                 <input type=“text” ng-model="ic.newUser.first_name"></input>
             </div>
-            <div flex="15">
+            <div flex="30">
                 <label for=“lastname”>Last Name:</label><br>
                 <input type=“text” ng-model="ic.newUser.last_name"/>
             </div>
-            <div flex="15">
+        </div>
+        <div class="section" layout="row" layout-align="space-around center"></div>
+            <div flex="30">
                 <label for=“PIN”>Pin:</label><br>
                 <input type=“text” ng-model="ic.newUser.pin" maxlength="4"/>
             </div>
-            <div flex="15">
+            <div flex="30">
                 <label for="confirmpin">Confirm PIN:</label><br>
                 <input type=“text” ng-model="ic.newUser.confirmpin" maxlength="4"/>
             </div>
-            <div flex="15">
+        </div>
+        <div class="section" layout="row" layout-align="space-around center">
+            <div flex="50">
                 <label for=“email”>Responder Email:</label><br>
                 <input type=“text” ng-model="ic.newUser.rEmail"/>
             </div>
@@ -50,10 +54,8 @@
                 <md-button class="md-raised md-primary" ng-click="ic.addUser()">Add new user</md-button>
             </div>
         </div>
-        <hr>
-        <h1> User History </h1>
-<br>
-<br>
+        
+        
  
     </div>
 </div>
