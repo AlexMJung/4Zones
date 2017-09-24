@@ -6,7 +6,7 @@ app.service('loginService', ['$http', '$location', function ($http, $location) {
         PIN: {},
         Zone: {},
         Emotion: {},
-        LoggedIn: {},
+        LoggedIn: false,
         responderAlerted: false
     };
 

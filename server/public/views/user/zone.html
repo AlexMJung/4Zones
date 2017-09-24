@@ -1,15 +1,22 @@
 <div class="background">
-    <div class='title'><h2>Hello {{zc.User.Name}} </h2> <div class="back" ng-click="zc.out()">Not Me</div></div>
+    <div class='title' layout="row">
+        <div flex="70" flex-offset="15">
+            <h2>Hello {{zc.User.Name}} </h2>
+        </div>
+        <div flex="15">
+            <md-button class="md-raised md-warn back" ng-click="zc.out()">Not Me</md-button>
+        </div>
+    </div>
     <div id='blueZone' ng-click="zc.add('blue')" ng-model="zc.newData.zone">
-    <h2 class= 'colorName'>Blue</h2>
+        <h2 class='colorName'>Blue</h2>
     </div>
     <div id='greenZone' ng-click="zc.add('green')" ng-model="zc.newData.zone">
-    <h2 class='colorName'>Green</h2>
+        <h2 class='colorName'>Green</h2>
     </div>
     <div id='yellowZone' ng-click="zc.add('yellow')" ng-model="zc.newData.zone">
-    <h2 class='colorName'>Yellow</h2>
+        <h2 class='colorName'>Yellow</h2>
     </div>
     <div id='redZone' ng-click="zc.add('red')" ng-model="zc.newData.zone">
-    <h2 class='colorName'>Red</h2>
+        <h2 class='colorName'>Red</h2>
     </div>
 </div>

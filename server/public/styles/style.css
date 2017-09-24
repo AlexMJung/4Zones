@@ -147,7 +147,7 @@ h1{
 
 .instructions{
     font-size: 36px;
-    margin: auto;
+    /* margin: auto; */
     text-align: center;
     
 }
@@ -155,10 +155,14 @@ h1{
 .emotions{
     background:whitesmoke;
     color:black;
-    height: 150px;
-    width: 300px;
+    height: 100%;
+    min-height: 100px;
+    width: 30%;
     margin: 2px 2px 2px 2px;
-    font-size: 40px
+    font-size: 40px;
+    text-align: center;
+    border-radius: 100px;
+    padding: 2% 0 2% 0;
 }
 
 .strategies{
@@ -169,7 +173,9 @@ h1{
     height: 150px;
     width: 24em;
     margin: 2px 2px 2px 2px;
-    font-size: 40px
+    font-size: 40px;
+    padding: 2% 0 2% 0;
+    border-radius: 75px
 }
 
 
@@ -246,6 +252,8 @@ h1{
 
 .title{
     background-color: #000000;
+    height: 8%;
+    font-size: 24px 
 }
 
 .background{
@@ -259,7 +267,11 @@ height: 100vh;
 color: white;
 z-index: -5;
 }
-
+#blue{
+background-color: #0B5292;
+height: 100vh;
+z-index: -5;
+}
 #green{
 background-color: #1A6443;
 height: 100vh;
@@ -296,29 +308,26 @@ z-index: -5;
 
   #blueZone{
 background-color: #0B5292;
-height: 25%;
-min-height: 170px;
+height: 23%;
 color: white;
 z-index: -5;
 }
 
 #greenZone{
 background-color: #1A6443;
-height: 25%;
-min-height: 170px;
+height: 23%;
 z-index: -5;
 }
 #yellowZone{
 background-color: #FCF005;
 color:black;
-height: 25%;
-min-height: 170px;
+height: 23%;
+
 z-index: -5;
 }
 #redZone{
 background-color: #B5102D;
-height: 25%;
-min-height: 170px;
+height: 23%;
 z-index: -5;
 }
 .gray{    
@@ -327,13 +336,17 @@ z-index: -5;
     color: #ffffff;
 }
 .strat{
-     position: relative;
+     /* position: relative; */
     text-align: center;
     background-color: whitesmoke;
     color:black;
     height: 400px;
     margin: 2px 2px 2px 2px;
-    font-size: 40px
+    font-size: 40px;
+    padding: 2% 0 2% 0;
+    border-radius: 25px;
+    border: solid;
+    
 }
 
 #userHistory{

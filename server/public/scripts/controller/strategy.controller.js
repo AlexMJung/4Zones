@@ -10,7 +10,7 @@ app.controller('strategyController', ['loginService', "$location", function (log
 
     self.checkLoggedIn = function () {
         if (self.User.LoggedIn == false) {
-            $location.path("/home")
+            $location.path("/")
         }
     }//end of checkLoggedIn
 

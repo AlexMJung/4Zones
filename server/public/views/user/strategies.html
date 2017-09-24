@@ -1,18 +1,30 @@
-<div layout="column" id={{sc.User.Zone}}>
-    <div layout-margin layout-align="center center">
-        <div flex="80" class="instructions">
-            <h2>Please try these strategies. Click done to close. </h2>
+<div class='title' layout="row">
+    <div flex="70" flex-offset="15">
+        <h2>Thank you for sharing! </h2>
+    </div>
+</div>
+<div class="background">
+    <div layout="column" id={{sc.User.Zone}}>
+        <div layout="row" layout-margin layout-align="center center">
+            <div flex="80" flex-offset="10" class="instructions">
+                <h2>Need to move zones? Try these!</h2>
+            </div>
         </div>
-        <div flex="80" class="strat" layout-align="center center">
-            <ul>
-                <li>Take 5 deep breaths.</li>
-                <li>Look at this puppy.</li>
-                <li>Go to the restroom and wash your face.</li>
-            </ul>
+        <div flex-offset="15" layout="row">
+            <div flex="85" class="strat" layout-align="center center">
+                <h2>Strategies</h2>
+                <ul>
+                    <li>Take 5 deep breaths.</li>
+                    <li>Look at this puppy.</li>
+                    <li>Go to the restroom and wash your face.</li>
+                </ul>
+            </div>
         </div>
-        <div layout="row" layout-align="center center">
-            <div flex="37" class="strategies" ng-click="sc.alertResponder()">Alert my responder I need help.</div>
-            <div flex="37" class="strategies" ng-click="sc.out()">Done</div>
+        <div flex-offset="15" layout="row">
+            <div flex="85" layout="row" layout-align="center center">
+                <div flex="41" class="strategies" ng-click="sc.alertResponder()">Alert my responder I need help.</div>
+                <div flex="41" class="strategies" ng-click="sc.out()">Done</div>
+            </div>
         </div>
     </div>
 </div>

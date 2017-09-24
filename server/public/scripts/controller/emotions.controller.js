@@ -1,4 +1,4 @@
-app.controller('emoController', ['loginService', '$location', function (loginService, $location) {
+app.controller('emoController', ['loginService', '$location', '$interval', function (loginService, $location, $interval) {
     console.log('emo.controller loaded');
     var self = this;
 
@@ -103,4 +103,23 @@ app.controller('emoController', ['loginService', '$location', function (loginSer
     }//end of checkLoggedIn
     
     self.checkLoggedIn();
+
+
+    //creates WhiteFrame effect
+    // this.elevation = 1;
+    // this.showFrame = 3;
+
+    // this.nextElevation = function () {
+    //     if (++this.elevation == 25) {
+    //         this.elevation = 1;
+    //     }
+    // };
+
+    // $interval(this.nextElevation.bind(this), 500);
+
+    // this.toggleFrame = function () {
+    //     this.showFrame = this.showFrame == 3 ? -1 : 3;
+    // };
+
+
 }])//end of app.controller

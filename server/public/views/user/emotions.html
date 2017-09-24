@@ -1,23 +1,30 @@
-<div class='title'>
-    <h2>Hello {{ec.User.Name}} </h2>
-</div>
-<div class="background">
-    <div id={{ec.User.Zone}} layout="column" >
-        <div class="instructions">
-            <p>Please Select an Emotion</p>
-        </div>
-        <div layout="row" layout-margin layout-align="space-around center">
-            <div flex="45" class="emotions" ng-click="ec.add('a')">{{ec.color.a}}</div>
-            <div flex="45" class="emotions" ng-click="ec.add('b')">{{ec.color.b}}</div>
-        </div>
-        <div layout="row" layout-margin layout-align="space-around center">
-            <div flex="45" class="emotions" ng-click="ec.add('c')">{{ec.color.c}}</div>
-            <div flex="45" class="emotions" ng-click="ec.add('d')">{{ec.color.d}}</div>
-        </div>
-        <div layout="row" layout-margin layout-align="space-around center">
-            <div flex="45" class="emotions" ng-click="ec.alertResponder()">Alert my responder I need help.</div>
-            <div flex="45" class="emotions" ng-click="ec.back()">None of these fit, go back.</div>
-        </div>
-
+<div class='title' layout="row">
+    <div flex="70" flex-offset="15">
+        <h2>Hello {{ec.User.Name}} </h2>
     </div>
 </div>
+<div class="background">
+    <div id={{ec.User.Zone}} layout="column">
+        <div flex="15" class="instructions">
+            <p>Please Select an Emotion</p>
+        </div>
+        <div flex="20">
+            <div layout="row" layout-margin layout-align="space-around center">
+                <div flex="45" class="emotions" md-whiteframe="{{aheight}}"  ng-init="aheight = 3" ng-mouseenter="aheight = 24" ng-mouseleave="aheight = 3" ng-click="ec.add('a')">{{ec.color.a}}</div>
+                <div flex="45" class="emotions" md-whiteframe="{{bheight}}"  ng-init="bheight = 3" ng-mouseenter="bheight = 24" ng-mouseleave="bheight = 3" ng-click="ec.add('b')">{{ec.color.b}}</div>
+            </div>
+        </div>
+        <div flex="20">
+            <div layout="row" layout-margin layout-align="space-around center">
+                <div flex="45" class="emotions" md-whiteframe="{{cheight}}"  ng-init="cheight = 3" ng-mouseenter="cheight = 24" ng-mouseleave="cheight = 3" ng-click="ec.add('c')">{{ec.color.c}}</div>
+                <div flex="45" class="emotions" md-whiteframe="{{dheight}}"  ng-init="dheight = 3" ng-mouseenter="dheight = 24" ng-mouseleave="dheight = 3" ng-click="ec.add('d')">{{ec.color.d}}</div>
+            </div>
+        </div>
+        <div flex="20">
+            <div layout="row" layout-margin layout-align="space-around center">
+                <div flex="45" class="emotions" md-whiteframe="{{eheight}}"  ng-init="eheight = 3" ng-mouseenter="eheight = 24" ng-mouseleave="eheight = 3" ng-click="ec.alertResponder()">Alert my responder I need help.</div>
+                <div flex="45" class="emotions" md-whiteframe="{{fheight}}"  ng-init="fheight = 3" ng-mouseenter="fheight = 24" ng-mouseleave="fheight = 3" ng-click="ec.back()">None of these fit, go back.</div>
+            </div>
+
+        </div>
+    </div>

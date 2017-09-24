@@ -51,9 +51,7 @@ app.config(['$routeProvider', function ($routeProvider) {
                 return UserService.getuser();
             }
         }
-    })
-
-        .otherwise({
+    }).otherwise({
             redirectTo: '/'
         });
 }])
