@@ -6,7 +6,7 @@
 <div class="background">
     <div id={{ec.User.Zone}} layout="column">
         <div flex="15" class="instructions">
-            <p>Please Select an Emotion</p>
+            <p>What {{ec.User.Zone}} emotion do you feel? </p>
         </div>
         <div flex="20">
             <div layout="row" layout-margin layout-align="space-around center">
@@ -21,9 +21,17 @@
             </div>
         </div>
         <div flex="20">
+                <div layout="row" layout-margin layout-align="space-around center">
+                    <div flex="45" class="emotions" md-whiteframe="{{gheight}}" ng-init="gheight = 3" ng-mouseenter="gheight = 24" ng-mouseleave="gheight = 3"
+                        ng-click="ec.add('g')">{{ec.color.g}}</div>
+                    <div flex="45" class="emotions" md-whiteframe="{{hheight}}" ng-init="hheight = 3" ng-mouseenter="hheight = 24" ng-mouseleave="hheight = 3"
+                        ng-click="ec.add('h')">{{ec.color.h}}</div>
+                </div>
+        </div>
+        <div flex="20">
             <div layout="row" layout-margin layout-align="space-around center">
-                <div flex="45" class="emotions" md-whiteframe="{{eheight}}"  ng-init="eheight = 3" ng-mouseenter="eheight = 24" ng-mouseleave="eheight = 3" ng-click="ec.alertResponder()">Alert my responder I need help.</div>
-                <div flex="45" class="emotions" md-whiteframe="{{fheight}}"  ng-init="fheight = 3" ng-mouseenter="fheight = 24" ng-mouseleave="fheight = 3" ng-click="ec.back()">None of these fit, go back.</div>
+                <div flex="45" class="emotions" md-whiteframe="{{eheight}}"  ng-init="eheight = 3" ng-mouseenter="eheight = 24" ng-mouseleave="eheight = 3" ng-click="ec.alertResponder()">I need help</div>
+                <div flex="45" class="emotions" md-whiteframe="{{fheight}}"  ng-init="fheight = 3" ng-mouseenter="fheight = 24" ng-mouseleave="fheight = 3" ng-click="ec.back()">None of these fit</div>
             </div>
 
         </div>

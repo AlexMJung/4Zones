@@ -1,21 +1,39 @@
-<div layout="row" class="container" layout-align="center center">
-    <div id="welcomebox" layout="row" layout-align="center start">
-        <!-- <h1 class="lead alert alert-danger" role="alert" ng-if="Lc.message != ''">{{lc.message}}</h2> -->
-            
-                <md-card id="clientLogin">
-                    <md-card-content>
-                        <h1>Hello!</h1>
-                        <h2>{{Lc.message}}</h2>
-                        <label for="username">Username:</label><br>
-                        <input type="text" ng-model="Lc.user.username" /><br>
-                        <label for="password">Password:</label><br>
-                        <input type="password" ng-model="Lc.user.password" /><br>
-                    </md-card-content>
-                    <md-card-actions layout="row" layout-align="center center">
-                        <md-button ng-click="Lc.login(Lc.User)"> Log In </md-button>
-                        <md-button ng-href="/#!/register">Register</md-button>
-                        <md-button ng-href="/#!/">Back To PIN Log In</md-button>
-                    </md-card-actions>
-                </md-card>
+    <div layout="column" layout-align="center center">
+        <div flex id="welcomebox" layout="column" layout-align="center center">
+            <div>
+                <h1>4Zones!</h1>
+                <div flex="20" flex-offset="40" id='ZonesImage'></div>
+                <div id=zonesAd>
+                    <a href="http://www.zonesofregulation.com/index.html">A companion app and data collection tool for THE ZONES OF REGULATION ciriculum</a>
+                </div>
+                </div>
+            <md-card id="clientLogin">
+                <md-card-content>
+                    <h1>Hello!</h1>
+                    <h2>{{Lc.message}}</h2>
+                    <div layout="row">
+                        <div flex="50" layout="column">
+                            <label for="username">Username:</label><br>
+                            <input type="text" ng-model="Lc.user.username" />
+                            <br>
+                            <label for="password">Password:</label><br>
+                            <input type="password" ng-model="Lc.user.password" />
+                        </div>
+                </md-card-content>
+                <md-card-actions flex="30" flex-offset="20">
+                    <div flex layout="column" layout-align="start none" layout-margin>
+                        <md-button class="md-raised md-primary" ng-click="Lc.login(Lc.User)"> Log In </md-button><br>
+                        <md-button class="md-raised md-primary" ng-href="/#!/register">Register</md-button>
+                    </div>
+                    </div>
+                </md-card-actions>
+            </md-card>
+            <div layout="row" layout-align="center center">
+                <md-button class="md-raised md-warn" ng-href="/#!/">Back To PIN Log In</md-button>
+            </div>
+            <div>
+                <h5 class='mini'>*Please note that at this time this app is not officially affiliated or endorsed by The Zones Of Regulation.</h5>
+            </div>
+        </div>
+        
     </div>
-</div>

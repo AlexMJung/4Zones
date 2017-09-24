@@ -8,66 +8,75 @@ body{
 a{
     text-decoration: none;
 }
+#zonesAd a{
+    text-decoration: none;
+    color: white;
+}
 .styledblue{
 background-color: #0B5292;
     color: white;
     height: 60px;
-    width: 300px;
+    width: 290px;
     font-size: 20px;
     align-content: center;
     z-index: 2;
     margin: 10px 10px 10px 10px;
     font-weight: bold;
-    border-radius: 3px;
+    border-radius: 15px;
+    border: 3px solid #000000;
 }
 
 .styledgreen{
 background-color: #1A6443;
    color: white;
     height: 60px;
-    width: 300px;
+    width: 290px;
     font-size: 20px;
     align-content: center;
     z-index: 2;
     margin: 10px 10px 10px 10px;
     font-weight: bold;
-    border-radius: 3px;
+    border-radius: 15px;
+    border: 3px solid #000000;
 }
 .styledyellow{
 background-color: #FCF005;
-   color: white;
+   color: #000000;
     height: 60px;
-    width: 300px;
+    width: 290px;
     font-size: 20px;
     align-content: center;
     z-index: 2;
     margin: 10px 10px 10px 10px;
     font-weight: bold;
-    border-radius: 3px;
+    border-radius: 15px;
+    border: 3px solid #000000
 }
 .styledred{
 background-color: #B5102D;
    color: white;
     height: 60px;
-    width: 300px;
+    width: 290px;
     font-size: 20px;
     align-content: center;
     z-index: 2;
     margin: 10px 10px 10px 10px;
     font-weight: bold;
-    border-radius: 3px;
+    border-radius: 15px;
+    border: 3px solid #000000
 }
 #landingNewUser{
     background-color: purple;
     color: white;
     height: 60px;
-    width: 300px;
+    width: 290px;
     font-size: 30px;
     align-content: center;
     z-index: 2;
     margin: 10px 10px 10px 10px;
     font-weight: bold;
-    border-radius: 3px;
+    border-radius: 15px;
+    border: 3px solid #000000
 }
 
 .smallblue{
@@ -107,6 +116,7 @@ background-color: #B5102D;
 #pinBox{
     background-color:black;
     /* position: relative; */
+    font-family: Helvetica, Courier, Arial, Verdana;
     opacity: .7;
     height: 100%;
     min-height: 300px;
@@ -120,14 +130,17 @@ background-color: #B5102D;
 
 #pin_label{
     text-align: center;
-    font-size: 100%
+    font-size: 100%;
+    font-family: Helvetica, Courier, Arial, Verdana;
+    text-decoration: bold;
 }
 
 .pin{
-    text-align: center;
+text-align: center;
 height: 100%;
 width: 5%;
 margin: 0 0 0 0;
+font-family: Helvetica, Courier, Arial, Verdana;
 
 }
 
@@ -163,6 +176,8 @@ h1{
     text-align: center;
     border-radius: 100px;
     padding: 2% 0 2% 0;
+    border-style: solid;
+    border-width: 6px;
 }
 
 .strategies{
@@ -175,15 +190,23 @@ h1{
     margin: 2px 2px 2px 2px;
     font-size: 40px;
     padding: 2% 0 2% 0;
-    border-radius: 75px
+    border-radius: 75px;
+      border-style: solid;
+    border-width: 6px;
+    
 }
 
 
 #welcomebox{
+    margin-top: 100px; 
     background-color: #24678d;
     color: #ffffff;
     height: 600px;
-    width: 800px
+    width: 800px;
+    border-style: solid;
+    border-width: 6px;
+    border-color:#000000;
+    border-radius: 15px;
 }
 #loginbox{
     background-color: whitesmoke;
@@ -193,19 +216,21 @@ h1{
 }
 
 #landing{
+    background: linear-gradient(silver, #7313AB,  #000000);
     background-color: #7313AB;
-    height: 900px;
+    height: 100vh;
     text-align: center;
     z-index: 1
 }
 
 #landinglogin{
-    position: fixed;
     background-color: whitesmoke;
     color: black;
-    height: 700px;
-    width: 1200px;
-    z-index: 4
+    height: 80%;
+    width: 95%;
+    z-index: 4;
+    border: 6px solid silver;
+    border-radius: 75px;
 
 }
 
@@ -217,11 +242,9 @@ h1{
     z-index: 2;
     margin: 10px 10px 10px 10px
 }
-
-
 #header{
     background-color: #7313AB;
-    height: 75px;
+    height: 100vh;
     text-align: center;
     z-index: 1
 }
@@ -233,6 +256,7 @@ h1{
     height: 40%
 }
 #clientRegister{
+    margin: 10 0 0 0;
     background-color: whitesmoke;
     color:black;
      height: 80%;
@@ -245,9 +269,18 @@ h1{
 #imgBackground{
     width: auto;
     height: 100%;
+    background-color: #000000;
     background-size: contain;
-        background-image: url("../views/images/background.png");
-    
+    background-image: url("../views/images/background.png");
+    z-index: -19; 
+}
+#ZonesImage{
+    width: auto;
+    height: 50px;
+    background-size: contain;
+    background-image: url("../views/images/Zones.png");
+    background-repeat: no-repeat;
+    align-content: center;
 }
 
 .title{
@@ -260,6 +293,14 @@ h1{
     height: 100vh;
      background-color: #000000;
 }
+
+#background{
+    height: 100vh;
+    background-color: #000000;
+    opacity: .3;
+    z-index: 0
+}
+
 
 #small{
 background-color: #0B5292;
@@ -306,13 +347,12 @@ z-index: -5;
 .checkboxdemoBasicUsage legend {
   color: #3F51B5; }
 
-  #blueZone{
+#blueZone{
 background-color: #0B5292;
 height: 23%;
 color: white;
 z-index: -5;
 }
-
 #greenZone{
 background-color: #1A6443;
 height: 23%;
@@ -322,11 +362,36 @@ z-index: -5;
 background-color: #FCF005;
 color:black;
 height: 23%;
-
 z-index: -5;
 }
 #redZone{
 background-color: #B5102D;
+height: 23%;
+z-index: -5;
+}
+#blueZone:hover{
+background-color: #0B5292;
+opacity: .6;
+height: 23%;
+color: white;
+z-index: -5;
+}
+#greenZone:hover{
+background-color: #1A6443;
+opacity: .6;
+height: 23%;
+z-index: -5;
+}
+#yellowZone:hover{
+background-color: #FCF005;
+color:black;
+opacity: .6;
+height: 23%;
+z-index: -5;
+}
+#redZone:hover{
+background-color: #B5102D;
+opacity: .6;
 height: 23%;
 z-index: -5;
 }
@@ -340,13 +405,14 @@ z-index: -5;
     text-align: center;
     background-color: whitesmoke;
     color:black;
-    height: 400px;
+    height: 500px;
     margin: 2px 2px 2px 2px;
     font-size: 40px;
     padding: 2% 0 2% 0;
     border-radius: 25px;
-    border: solid;
-    
+    border-style: solid;
+    border-width: 6px;
+
 }
 
 #userHistory{
@@ -373,6 +439,29 @@ border: 1px, solid, #000000;
 .login_base{
     background-color: white;
     color: black;
-    height: 500px;
+    height: 300px;
     width: 500px;
+    border: 3px solid silver;
+    border-radius: 15px;
+}
+
+#stratStuff{
+    padding: 0 0 -5px 0;
+    margin: 0 0 -10px, 0;
+}
+
+#Dashboard{
+    font-size: 36px;
+    color: #000000;
+    Margin: 0 0 0 0;
+}
+#Dashboard_subheading{
+    font-size: 20px;
+    color: #000000;
+    margin: 0 0 0 0;
+}
+hr{
+    height:12px;
+    background: linear-gradient(to right, silver, #7313AB, #7313AB, silver);
+    border: 0px;
 }

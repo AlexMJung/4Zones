@@ -7,23 +7,27 @@
     <div layout="column" id={{sc.User.Zone}}>
         <div layout="row" layout-margin layout-align="center center">
             <div flex="80" flex-offset="10" class="instructions">
-                <h2>Need to move zones? Try these!</h2>
+                <h2>Need to move zones? Try these strategies!</h2>
             </div>
         </div>
         <div flex-offset="15" layout="row">
             <div flex="85" class="strat" layout-align="center center">
-                <h2>Strategies</h2>
                 <ul>
-                    <li>Take 5 deep breaths.</li>
-                    <li>Look at this puppy.</li>
-                    <li>Go to the restroom and wash your face.</li>
+                    <li>Get a drink</li>
+                    <li>Go to the bathroom</li>
+                    <li>Do a deep breathing exercise</li>
+                    <li>Switch tasks</li>
+                    <li>Take a break</li>
+                    <li>Talk about the problem</li>
+                    <li>Ask for help</li>
+                    <li>Talk to your inner coach</li>
                 </ul>
             </div>
         </div>
         <div flex-offset="15" layout="row">
             <div flex="85" layout="row" layout-align="center center">
-                <div flex="41" class="strategies" ng-click="sc.alertResponder()">Alert my responder I need help.</div>
-                <div flex="41" class="strategies" ng-click="sc.out()">Done</div>
+                <div flex="41" class="strategies" md-whiteframe="{{aheight}}" ng-init="aheight = 3" ng-mouseenter="aheight = 24" ng-mouseleave="aheight = 3" ng-click="sc.alertResponder()">I need help</div>
+                <div flex="41" class="strategies" md-whiteframe="{{bheight}}" ng-init="bheight = 3" ng-mouseenter="bheight = 24" ng-mouseleave="bheight = 3" ng-click="sc.out()">Done</div>
             </div>
         </div>
     </div>

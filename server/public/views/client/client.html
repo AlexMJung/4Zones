@@ -1,16 +1,17 @@
 <div class="container" layout="row" layout-align="center center">
-    <div id="landing" flex d>
+    <div id="landing" flex>
         <h1 id="welcome" class="lead">Welcome, {{uc.userService.userObject.name}} {{uc.userService.userObject.lname}}!</h1>
-        <button id="logout" class="btn btn-default" ng-click="uc.logout()">Log Out</button>
-        <div flex="94" id="landinglogin">
-            <h1>User's current states:</h1>
+        <md-button class="md-raised md-warn" id="logout" ng-click="uc.logout()">Log Out</md-button>
+        <div flex="90" flex-offset="5" id="landinglogin">
+            <h1 id="Dashboard">Dashboard</h1>
+            <p id="Dashboard_subheading"> Your users current zones are displayed below.</p>
             <hr>
-            <a ng-repeat="participant in uc.Users.list" ng-href="#!/info/{{participant.pin}}">
-                <div flex="20" md-whiteframe="{{height}}" ng-init="height = 6" ng-mouseenter="height = 12" ng-mouseleave="height = 6" class=styled{{participant.zone}}>{{participant.first_name}} {{participant.last_name}}<br> {{participant.created_at | date : "short"}}</div>
-            </a>
-            <div flex="20" layout-align="center center">
-
-                <div id="landingNewUser" md-whiteframe="{{height}}" ng-init="height = 6" ng-mouseenter="height = 12" ng-mouseleave="height = 6" ng-click=uc.newUser()> + Add A User</div>
+            <div layout="rows" layout-align="space-around, center" layout-wrap>
+                <a ng-repeat="participant in uc.Users.list" ng-href="#!/info/{{participant.pin}}">
+                    <div flex="100" md-whiteframe="{{height}}" ng-init="height = 6" ng-mouseenter="height = 24" ng-mouseleave="height = 6" class=styled{{participant.zone}}>{{participant.first_name}} {{participant.last_name}}<br> {{participant.created_at | date : "short"}}</div>
+                </a>
+                <div id="landingNewUser" md-whiteframe="{{height}}" ng-init="height = 6" ng-mouseenter="height = 24" ng-mouseleave="height = 6"
+                    ng-click=uc.newUser()> + Add A User</div>
             </div>
         </div>
     </div>

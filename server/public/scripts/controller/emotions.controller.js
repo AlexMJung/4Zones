@@ -14,45 +14,59 @@ app.controller('emoController', ['loginService', '$location', '$interval', funct
 
     if (self.User.Zone == "green") {
         self.color = {
-            a: 'Good',
+            a: 'Happy',
             b: 'Calm',
-            c: 'Relaxed',
-            d: 'Ready to learn'
+            c: 'Focused',
+            d: 'Ready to learn',
+            g: 'Content',
+            h: 'Relaxed'
         }
     } else if (self.User.Zone == "blue") {
         self.color = {
             a: 'Sad',
             b: 'Tired',
             c: 'Bored',
-            d: 'Hurt'
+            d: 'Sick',
+            g: 'Hurt',
+            h: 'Moving slowly'
+
         }
     } else if (self.User.Zone == "yellow") {
         self.color = {
-            a: 'Anxious',
-            b: 'Overwhelmed',
-            c: 'Annoyed',
-            d: 'Embarrassed'
+            a: 'Worried',
+            b: 'Annoyed',
+            c: 'Frustrated',
+            d: 'Excited',
+            g: 'Fidgety',
+            h: 'Crabby'
         }
     } else {
         self.color = {
-            a: 'Mad',
-            b: 'Aggresive',
-            c: 'Yelling',
-            d: 'Out of Control'
+            a: 'Angry',
+            b: 'Terrified',
+            c: 'Elated',
+            d: 'Out of Control',
+            g: 'Mean',
+            h: 'Yelling/Hitting'
         }
     }
 
     self.add = function (z) {
         if(self.User.Zone == "green"){
             if (z === 'a'){
-            self.newData = 'Good';
+                self.newData = 'Happy';
             } else if (z === 'b'){
                 self.newData = 'Calm'
             } else if (z === 'c') {
-                self.newData = 'Relaxed'
+                self.newData = 'Focused'
             } else if ( z === 'd'){
                 self.newData = 'Ready to learn'
+            } else if (z === 'g'){
+                self.newData = 'Content'
+            } else if (z === 'h'){
+                self.newData = 'Relaxed'
             }
+
         } else if (self.User.Zone == "blue") {
             if (z === 'a') {
                 self.newData = 'Sad';
@@ -61,27 +75,39 @@ app.controller('emoController', ['loginService', '$location', '$interval', funct
             } else if (z === 'c') {
                 self.newData = 'Bored'
             } else if (z === 'd') {
+                self.newData = 'Sick'
+            } else if (z === 'g') {
                 self.newData = 'Hurt'
+            } else if (z === 'h') {
+                self.newData = 'Moving Slowly'
             }
         } else if (self.User.Zone == "yellow") {
             if (z === 'a') {
-                self.newData = 'Anxious';
+                self.newData = 'Worried';
             } else if (z === 'b') {
-                self.newData = 'Overwhelmed'
-            } else if (z === 'c') {
                 self.newData = 'Annoyed'
+            } else if (z === 'c') {
+                self.newData = 'Frustrated'
             } else if (z === 'd') {
-                self.newData = 'Embarrassed'
+                self.newData = 'Excited'
+            } else if (z === 'g') {
+                self.newData = 'Fidgety'
+            } else if (z === 'h') {
+                self.newData = 'Crabby'
             }
         } else if (self.User.Zone == "red") {
             if (z === 'a') {
-                self.newData = 'Mad';
+                self.newData = 'Angry';
             } else if (z === 'b') {
-                self.newData = 'Aggressive'
+                self.newData = 'Terrified'
             } else if (z === 'c') {
-                self.newData = 'Yelling'
+                self.newData = 'Elated'
             } else if (z === 'd') {
                 self.newData = 'Out of Control'
+            } else if (z === 'g') {
+                self.newData = 'Mean'
+            } else if (z === 'h') {
+                self.newData = 'Yelling/Hitting'
             }
         }
         console.log('clicked to log emotion', self.newData);

@@ -65,7 +65,7 @@ app.service('loginService', ['$http', '$location', function ($http, $location) {
     self.alertResponder = function () {
         console.log('alert responder button hit.');
         self.User.responderAlerted = true;
-        alert("Your assigned responder has been messaged")
+        alert("A message has been sent to your case manager.")
         $http.post('/logger', self.User).then(function (response){
   var path = $location.path('/strategies');
     });
