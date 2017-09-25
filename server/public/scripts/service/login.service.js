@@ -10,7 +10,7 @@ app.service('loginService', ['$http', '$location', function ($http, $location) {
         responderAlerted: false
     };
 
-    self.message ="Please enter your PIN."
+    self.message ="Please enter your passcode"
 
     self.check = function (pinCheck) {
         console.log('self.check hit in service');

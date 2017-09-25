@@ -1,17 +1,16 @@
 <div class="background" layout="column">
-    <div id="header">
+    <div id="landing">
         <h1 id="welcome" class="lead">User History!</h1>
         <div layout="row" layout-align="center center">
-        <div flex="45">
-        <md-button class="md-raised md-primary" ng-click="pc.dashboard()">User Panel</md-button>
+            <div flex="15">
+                <md-button class="md-raised md-primary" ng-click="pc.dashboard()">User Panel</md-button>
+            </div>
+            <div flex="15">
+                <md-button class="md-raised md-primary" ng-click="pc.updateParticipantStuff()">Update User Info</md-button>
+            </div>
         </div>
-        <div flex="45">
-            <md-button class="md-raised md-primary" ng-click="pc.updateParticipantStuff()">Update User Info</md-button>
-        </div>
-        </div>
-    </div>
-    <div class="background_base">
-        <!-- <div class="section" layout="row" layout-align="space-around center">
+        <div class="background_base">
+            <!-- <div class="section" layout="row" layout-align="space-around center">
             <div flex="15">
                 <label for=“firstname”>First Name:</label><br>
                 <input type=“text” ng-model="pc.updateParticipant.first_name" placeholder="pc.Participant"/>
@@ -52,10 +51,10 @@
                     Advanced
                 </md-checkbox>
             </div> -->
-           
-        <!-- </div> -->
-      
-        <!-- <md-content class="gray" layout-padding ng-cloak>
+
+            <!-- </div> -->
+
+            <!-- <md-content class="gray" layout-padding ng-cloak>
             <div class="gray" layout="row" layout-align="center center">
                 <div flex="20">
                     <h4>Pick a date range:</h4>
@@ -71,30 +70,31 @@
                 </div>
             </div>
         </md-content> -->
-        <br>
-    
-        <table id="userHistory">
-            <thead>
-                <td>Posted</td>
-                <td>Zone</td>
-                <td>Emotion</td>
-                <!-- <td>Cause</td>
-                <td>Response</td> -->
-                <td>Assistance Requested?</td>
-                <!-- <td>{{pc.userObject.name}} Notes.</td> -->
-            </thead>
-            <tbody>
+            <br>
 
-                <tr ng-repeat="history in pc.userService.gotParticipantHistory.list.data">
-                    <td>{{history.created_at | date: "short"}}</td>
-                    <td class="small{{history.zone}}">{{history.zone}}</td>
-                    <td>{{history.emotion}}</td>
-                    <!-- <td>{{history.cause}}</td>
+            <table flex="90" flex-offset="5" id="userHistory">
+                <thead>
+                    <td>Posted</td>
+                    <td>Zone</td>
+                    <td>Emotion</td>
+                    <!-- <td>Cause</td>
+                <td>Response</td> -->
+                    <td>Assistance Requested?</td>
+                    <!-- <td>{{pc.userObject.name}} Notes.</td> -->
+                </thead>
+                <tbody>
+
+                    <tr ng-repeat="history in pc.userService.gotParticipantHistory.list.data">
+                        <td>{{history.created_at | date: "short"}}</td>
+                        <td class="small{{history.zone}}">{{history.zone}}</td>
+                        <td>{{history.emotion}}</td>
+                        <!-- <td>{{history.cause}}</td>
                     <td>{{history.response}}</td> -->
-                    <td>{{history.responderalerted}}</td>
-                    <!-- <td>{{history.notes}}<button ng-click="addNote">+</button></td> -->
-                </tr>
-            </tbody>
-        </table>
+                        <td>{{history.responderalerted}}</td>
+                        <!-- <td>{{history.notes}}<button ng-click="addNote">+</button></td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
