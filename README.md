@@ -49,7 +49,12 @@ High level list of items completed.
 
 Features that you would like to add at some point in the future.
 
-- [ ] Feature c
+- [ ] Updating student info.
+- [ ] Adding filters for the history table.
+- [ ] Modifying functionality based on student emotional awareness.
+- [ ] Adding animations to the student view.
+- [ ] Adding an admin level.
+- [ ] Adding a registration key.
 
 ## Deployment
 
@@ -62,4 +67,4 @@ Add additional notes about how to deploy this on a live system
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
+* Charly Renk for reminding me what an MVP is.
