@@ -28,9 +28,6 @@ app.controller('InfoController', function (UserService, $location) {
         }
     }//end of addUser
 
-    self.dashboard = function () {
-        $location.path('/user');
-    }
 
     self.checkboxSelected = function (z) {
         if (z === "low") {

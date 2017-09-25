@@ -5,13 +5,15 @@ app.service('UserService', function ($http, $location) {
     self.userObject = {
     };
 
-
-    self.start={}
-    self.end={}
+    // self.start={}
+    // self.end={}
   
-
     self.gotParticipantHistory = { list: {},
     };
+
+    self.dashboard = function () {
+        $location.path('/user');
+    }
 
     self.participent = {};
     // self.getParticipant = function(){
@@ -97,9 +99,10 @@ app.service('UserService', function ($http, $location) {
         $http.post('/user/add', addedUser).then(function (response){
             console.log(response);
             if(response.status === 200){
-                alert("User added! Please note students will not show on the dashboard until they have made their first entry");
-            }else{
-                alert("User not added. Please try again.")
+                swal("User added!", "Please note students will not show on the dashboard until they have made their first entry", "success");
+                self.dashboard();
+            }else if (response == null){
+                swal("Oops", "The user wasn't added. Please try agian with a different passcode.", "warn")
             }
         })        
     }

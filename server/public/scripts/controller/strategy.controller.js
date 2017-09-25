@@ -5,9 +5,6 @@ app.controller('strategyController', ['loginService', "$location", function (log
     self.User = loginService.User
     console.log(self.User)
 
-
-
-
     self.checkLoggedIn = function () {
         if (self.User.LoggedIn == false) {
             $location.path("/")
@@ -19,6 +16,7 @@ app.controller('strategyController', ['loginService', "$location", function (log
     };
 
     self.out = function () {
+        swal("Great job!", "Your update was saved", "success")
         loginService.out();
     }
 

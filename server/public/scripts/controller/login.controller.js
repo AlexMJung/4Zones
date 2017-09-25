@@ -59,6 +59,7 @@ app.controller('LoginController', function ($http, $location, UserService) {
             console.log('LoginController -- registerUser -- sending to server...', vm.user);
             $http.post('/register', vm.user).then(function (response) {
                 console.log('LoginController -- registerUser -- success');
+                swal("Your all signed up!", "Have a great day!", "success")
                 $location.path('/clientLogin');
             }
             )
