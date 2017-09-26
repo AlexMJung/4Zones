@@ -233,11 +233,12 @@ h1{
 #landinglogin{
     background-color: whitesmoke;
     color: black;
-    height: 80%;
+    height: 85%;
     width: 95%;
     z-index: 4;
     border: 6px solid silver;
     border-radius: 75px;
+    overflow-y: scroll;
 
 }
 

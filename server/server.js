@@ -7,13 +7,14 @@ var sessionConfig = require('./modules/session.config');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 //routing paths
-var log = require('./routes/logroute')
-var login = require('./routes/loginroute')
+var log = require('./routes/logroute');
+var login = require('./routes/loginroute');
 var indexRouter = require('./routes/index.router');
 var userRouter = require('./routes/user.router');
 var registerRouter = require('./routes/register.router');
-var getUsers = require('./routes/getusers.router')
+var getUsers = require('./routes/getusers.router');
 
 
 var port = process.env.PORT || 8000;
