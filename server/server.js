@@ -19,7 +19,7 @@ var getUsers = require('./routes/getusers.router');
 
 var port = process.env.PORT || 8000;
 
-app.use(express.static('./public'));
+app.use(express.static('./server/public'));
 app.use(sessionConfig);
 app.use(passport.initialize());
 app.use(passport.session());
