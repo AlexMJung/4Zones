@@ -10,8 +10,10 @@ app.controller('emoController', ['loginService', '$location', '$interval', funct
         b: {},
         c: {},
         d: {},
+        g: {},
+        h: {}
     };
-
+//sets buttons to have the correct emotions by zone
     if (self.User.Zone == "green") {
         self.color = {
             a: 'Happy',
@@ -50,7 +52,7 @@ app.controller('emoController', ['loginService', '$location', '$interval', funct
             h: 'Yelling/Hitting'
         }
     }
-
+//sets button values to correct emotion by button
     self.add = function (z) {
         if(self.User.Zone == "green"){
             if (z === 'a'){
