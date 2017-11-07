@@ -3,22 +3,22 @@
         <md-card id="clientRegister">
             <md-card-content>
                 <h1>Welcome</h1>
-                <h2>{{Lc.rmessage}}</h2>
+                <h2>{{lc.rmessage}}</h2>
                 <label for="username">Username:</label><br>
-                <input type="text" ng-model="Lc.user.username" /><br>
+                <input type="text" ng-model="lc.user.username" /><br>
                 <label for="password">Password:</label><br>
-                <input type="password" ng-model="Lc.user.password" /><br>
+                <input type="password" ng-model="lc.user.password" /><br>
                 <label for="password">Confirm Password:</label><br>
-                <input type="password" ng-model="Lc.user.confirm_password" /><br>
+                <input type="password" ng-model="lc.user.confirm_password" /><br>
                 <label for="password">First Name:</label><br>
-                <input type="text" ng-model="Lc.user.first_name" /><br>
+                <input type="text" ng-model="lc.user.first_name" /><br>
                 <label for="password">Last Name:</label><br>
-                <input type="text" ng-model="Lc.user.last_name" /><br>
+                <input type="text" ng-model="lc.user.last_name" /><br>
                 <label for="password">Email:</label><br>
-                <input type="text" ng-model="Lc.user.email" /><br>
+                <input type="text" ng-model="lc.user.email" /><br>
             </md-card-content>
             <md-card-actions layout="row" layout-align="space-around center" layout-margin>
-                <md-button class="md-raised md-primary" ng-click="Lc.registerUser(Lc.user)"> Register </md-button>
+                <md-button class="md-raised md-primary" ng-click="lc.registerUser(lc.user)"> Register </md-button>
                 <md-button class="md-raised md-warn" ng-href="/#!/clientLogin">Cancel</md-button>
             </md-card-actions>
             <md-card-footer>

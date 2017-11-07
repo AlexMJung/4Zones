@@ -1,4 +1,4 @@
-app.controller('loginController', ['loginService', function (loginService) {
+app.controller('userLoginController', ['loginService', function (loginService) {
     console.log('login.controller loaded');
     var self = this;
 

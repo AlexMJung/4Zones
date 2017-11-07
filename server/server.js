@@ -3,7 +3,6 @@ var app = express();
 var bodyParser = require('body-parser');
 var passport = require('./strategies/sql.localstrategy');
 var sessionConfig = require('./modules/session.config');
-//var agGrid = require('./public/vendors/ag-grid.js')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

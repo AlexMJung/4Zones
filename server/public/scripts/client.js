@@ -4,8 +4,8 @@ var app = angular.module('userApp', ['ngRoute', 'ngMaterial', /*'$mdDateLocalePr
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: './views/user/login.html',
-        controller: 'loginController',
-        controllerAs: 'lc'
+        controller: 'userLoginController',
+        controllerAs: 'ulc'
     }).when('/zones', {
         templateUrl: './views/user/zone.html',
         controller: 'zoneController',
@@ -20,10 +20,10 @@ app.config(['$routeProvider', function ($routeProvider) {
         controllerAs: 'sc'
     }).when('/clientLogin', {
         templateUrl: '/views/client/clientlogin.html',
-        controller: 'LoginController as Lc',
+        controller: 'loginController as lc',
     }).when('/register', {
         templateUrl: '/views/client/clientregister.html',
-        controller: 'LoginController as Lc'
+        controller: 'loginController as lc'
     }).when('/user', {
         templateUrl: '/views/client/client.html',
         controller: 'UserController',

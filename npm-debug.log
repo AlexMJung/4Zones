@@ -7,7 +7,7 @@
 6 silly lifecycle express_router_lecture_angular@1.0.0~prestart: no script for prestart, continuing
 7 info lifecycle express_router_lecture_angular@1.0.0~start: express_router_lecture_angular@1.0.0
 8 verbose lifecycle express_router_lecture_angular@1.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle express_router_lecture_angular@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/alexanderjung/PRIME/assignments/4Zones/code/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+9 verbose lifecycle express_router_lecture_angular@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/alexanderjung/PRIME/assignments/4Zones/code/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet
 10 verbose lifecycle express_router_lecture_angular@1.0.0~start: CWD: /Users/alexanderjung/PRIME/assignments/4Zones/code
 11 silly lifecycle express_router_lecture_angular@1.0.0~start: Args: [ '-c', 'node server/server.js' ]
 12 silly lifecycle express_router_lecture_angular@1.0.0~start: Returned: code: 1  signal: null
