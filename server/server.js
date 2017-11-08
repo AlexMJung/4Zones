@@ -13,7 +13,7 @@ var login = require('./routes/loginroute');
 var indexRouter = require('./routes/index.router');
 var userRouter = require('./routes/user.router');
 var registerRouter = require('./routes/register.router');
-var getUsers = require('./routes/getusers.router');
+var getUsers = require('./routes/getUsers.router');
 
 
 var port = process.env.PORT || 8000;
