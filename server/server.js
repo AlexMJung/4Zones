@@ -24,6 +24,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
+
 app.use('/logger', log);
 app.use('/login', login);
 app.use('/register', registerRouter);
