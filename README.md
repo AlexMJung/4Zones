@@ -72,18 +72,12 @@ supervisor VARCHAR(40)
 - enter NPM install in your CLI
 
 ## Screen Shot
-
-Include one or two screen shots of your project here (optional). Remove if unused.
 Home Page:
 ![Student login screen/homepage](screenshots-docs/homepage.png)
 Admin Login:
 ![Teacher Login](screenshots-docs/admin-login.png)
 Teacher Splash Page:
 ![Teacher landing page](screenshots-docs/splash.png)
-
-## Documentation
-
-[Original scope document:](screenshots-docs/Solo Project Work Template.pdf)
 
 ### Completed Features
 
