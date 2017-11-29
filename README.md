@@ -89,13 +89,19 @@ Teacher Splash Page:
 
 High level list of items completed.
 
-- [x] Feature a
-- [x] Feature b
+- [x] Students can login in with a simple passcode
+- [x] Students can enter emotions and all buttons work
+- [x] Teachers can login and create users
+- [x] Teachers can see all thier assigned students colors at a glance
+- [x] Teachers can see all of a students entries 
 
 ### Next Steps
 
 Features to add as time permits.
 
+- [ ] Limit visible students to only those assigned to the admin.
+- [ ] Get node mailer functionallity working.
+- [ ] Move the curser from one box to the next in the passcode page.
 - [ ] Updating student info.
 - [ ] Adding filters for the history table.
 - [ ] Modifying functionality based on student emotional awareness.
@@ -105,6 +111,7 @@ Features to add as time permits.
 - [ ] Adding node mailer functions.
 - [ ] Adding pattern recognition and data analytics.
 - [ ] Adding data visualization.
+- [ ] Make Teacher splash page auto renew. 
 
 ## Authors
 
